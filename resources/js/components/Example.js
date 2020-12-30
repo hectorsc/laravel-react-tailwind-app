@@ -7,7 +7,7 @@ function Example() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header">COMPONENTE EN REACT</div>
+                        <div className="card-header">COMPONENTE EN REACT!!</div>
 
                         <div className="card-body">Soy un componente de REACT! y estoy usando tailwind css</div>
                     </div>

@@ -1,0 +1,75 @@
+input#menu {
+   display: none;
+}
+
+.icon {
+   cursor: pointer;
+   display: block;
+   height: 24px;
+   padding: 16px;
+   width: 24px;
+}
+
+label.icon {
+   position: absolute;
+   z-index: 200;
+}
+
+.icon .menu,
+.icon .menu::before,
+.icon .menu::after {
+   background: white;
+   content: '';
+   display: block;
+   height: 2px;
+   position: absolute;
+   transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+   width: 20px;
+}
+
+.icon:hover .menu,
+.icon:hover .menu::before,
+.icon:hover .menu::after {
+   background: #bf125d;
+}
+
+.icon .menu {
+   left: 18px;
+   top: 27px;
+}
+
+.icon .menu::before {
+   top: -6px;
+}
+
+.icon .menu::after {
+   top: 6px;
+}
+
+#menu:checked+.icon .menu {
+   background: transparent;
+}
+
+#menu:checked+.icon .menu::before {
+   transform: rotate(45deg);
+}
+
+#menu:checked+.icon .menu::after {
+   transform: rotate(-45deg);
+}
+
+#menu:checked+.icon .menu::before,
+#menu:checked+.icon .menu::after {
+   top: 0;
+   transition: top ease .3s, transform ease .3s .3s;
+}
+
+nav.my-nav {
+   transition: width ease .6s;
+   overflow: hidden;
+}
+
+/* esto es lo que hace que se abra el menu */
+#menu:checked~nav {
+   width: 16rem;
+}

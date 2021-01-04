@@ -55,6 +55,7 @@ class CategoryControllerTest extends TestCase
 
     public function test_show_category()
     {
+        // probando probando
         $category = Category::factory()->create();
 
         $response = $this->getJson("/api/categories/{$category->getKey()}");

@@ -3,9 +3,9 @@
 @import 'tailwindcss/utilities';
 
 .btn-create {
-   @apply bg-green-600 p-2 text-white rounded;
+   @apply bg-indigo-600 p-2 px-4 text-white rounded;
 }
 
 .btn-create:hover {
-   @apply bg-green-900
+   @apply bg-indigo-900
 }

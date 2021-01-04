@@ -5,7 +5,7 @@ class Home extends React.Component {
    render() {
       return (
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
-            <h1 className="mb-2 font-bold text-3xl">Home</h1>
+            <h1 className="mb-2 font-bold text-2xl">Home</h1>
             <div className="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                <div className="p-6 sm:px-10 bg-white">
                   <div className=" text-2xl">

@@ -7,7 +7,7 @@ import Routes from "./Routes";
 const App = () => {
 
    return (
-      <div className="flex text-gray-700 ">
+      <div className="flex text-gray-700">
          <Router history={history}>
             <NavBar />
             <Routes /> 

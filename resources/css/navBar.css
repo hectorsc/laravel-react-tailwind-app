@@ -5,8 +5,7 @@ input#menu {
 .icon {
    cursor: pointer;
    display: block;
-   height: 24px;
-   padding: 16px;
+   padding: 28px;
    width: 24px;
 }
 
@@ -72,4 +71,20 @@ nav.my-nav {
 /* esto es lo que hace que se abra el menu */
 #menu:checked~nav {
    width: 16rem;
+}
+
+@media (max-width: 885px) {
+   .my-nav {
+      min-width: 56px;
+   }
+   .my-container {
+      overflow-x: hidden;
+   }
+
+   #menu:checked~nav {
+      width: 0;
+   }
+   label.icon {
+      display:none;
+   }
 }

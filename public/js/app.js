@@ -8366,7 +8366,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "input#menu {\n  display: none;\n}\n\n.icon {\n  cursor: pointer;\n  display: block;\n  height: 24px;\n  padding: 16px;\n  width: 24px;\n}\n\nlabel.icon {\n  position: absolute;\n  z-index: 200;\n}\n\n.icon .menu,\r\n.icon .menu::before,\r\n.icon .menu::after {\n  background: white;\n  content: '';\n  display: block;\n  height: 2px;\n  position: absolute;\n  transition: background ease .3s, top ease .3s .3s, transform ease .3s;\n  width: 20px;\n}\n\n.icon:hover .menu,\r\n.icon:hover .menu::before,\r\n.icon:hover .menu::after {\n  background: #bf125d;\n}\n\n.icon .menu {\n  left: 18px;\n  top: 27px;\n}\n\n.icon .menu::before {\n  top: -6px;\n}\n\n.icon .menu::after {\n  top: 6px;\n}\n\n#menu:checked+.icon .menu {\n  background: transparent;\n}\n\n#menu:checked+.icon .menu::before {\n  transform: rotate(45deg);\n}\n\n#menu:checked+.icon .menu::after {\n  transform: rotate(-45deg);\n}\n\n#menu:checked+.icon .menu::before,\r\n#menu:checked+.icon .menu::after {\n  top: 0;\n  transition: top ease .3s, transform ease .3s .3s;\n}\n\nnav.my-nav {\n  transition: width ease .6s;\n  overflow: hidden;\n}\n\n/* esto es lo que hace que se abra el menu */\n\n#menu:checked~nav {\n  width: 16rem;\n}", ""]);
+exports.push([module.i, "input#menu {\n  display: none;\n}\n\n.icon {\n  cursor: pointer;\n  display: block;\n  padding: 28px;\n  width: 24px;\n}\n\nlabel.icon {\n  position: absolute;\n  z-index: 200;\n}\n\n.icon .menu,\r\n.icon .menu::before,\r\n.icon .menu::after {\n  background: white;\n  content: '';\n  display: block;\n  height: 2px;\n  position: absolute;\n  transition: background ease .3s, top ease .3s .3s, transform ease .3s;\n  width: 20px;\n}\n\n.icon:hover .menu,\r\n.icon:hover .menu::before,\r\n.icon:hover .menu::after {\n  background: #bf125d;\n}\n\n.icon .menu {\n  left: 18px;\n  top: 27px;\n}\n\n.icon .menu::before {\n  top: -6px;\n}\n\n.icon .menu::after {\n  top: 6px;\n}\n\n#menu:checked+.icon .menu {\n  background: transparent;\n}\n\n#menu:checked+.icon .menu::before {\n  transform: rotate(45deg);\n}\n\n#menu:checked+.icon .menu::after {\n  transform: rotate(-45deg);\n}\n\n#menu:checked+.icon .menu::before,\r\n#menu:checked+.icon .menu::after {\n  top: 0;\n  transition: top ease .3s, transform ease .3s .3s;\n}\n\nnav.my-nav {\n  transition: width ease .6s;\n  overflow: hidden;\n}\n\n/* esto es lo que hace que se abra el menu */\n\n#menu:checked~nav {\n  width: 16rem;\n}\n\n@media (max-width: 885px) {\n  .my-nav {\n    min-width: 56px;\n  }\n\n  .my-container {\n    overflow-x: hidden;\n  }\n\n  #menu:checked~nav {\n    width: 0;\n  }\n\n  label.icon {\n    display:none;\n  }\n}", ""]);
 
 // exports
 
@@ -74243,7 +74243,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "w-full mx-auto sm:px-6 lg:px-8 py-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "mb-2 font-bold text-3xl"
+        className: "mb-2 font-bold text-2xl"
       }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bg-white overflow-hidden shadow-xl sm:rounded-lg"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74291,6 +74291,215 @@ function Index() {
 if (document.getElementById('react-app')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Index, null), document.getElementById('react-app'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/category/CategoryCreate.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/category/CategoryCreate.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CategoryForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CategoryForm */ "./resources/js/components/category/CategoryForm.js");
+/* harmony import */ var _CategoryForm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_CategoryForm__WEBPACK_IMPORTED_MODULE_2__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../api/crudActions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var CategoryCreate = /*#__PURE__*/function (_React$Component) {
+  _inherits(CategoryCreate, _React$Component);
+
+  var _super = _createSuper(CategoryCreate);
+
+  function CategoryCreate() {
+    _classCallCheck(this, CategoryCreate);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(CategoryCreate, [{
+    key: "render",
+    // onSubmit = async formValues => {
+    //    return await create('category', formValues);
+    // }
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "ui header"
+      }, "Crear Categor\xEDa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ui segment"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CategoryForm__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        onSubmit: this.onSubmit
+      })));
+    }
+  }]);
+
+  return CategoryCreate;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (CategoryCreate);
+
+/***/ }),
+
+/***/ "./resources/js/components/category/CategoryForm.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/category/CategoryForm.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\laragon2.0\\www\\react-tailwind-app\\resources\\js\\components\\category\\CategoryForm.js: Support for the experimental syntax 'classProperties' isn't currently enabled (23:18):\n\n\u001b[0m \u001b[90m 21 | \u001b[39m   }\u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m   \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 | \u001b[39m   onInputChange \u001b[33m=\u001b[39m event \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 | \u001b[39m      \u001b[36mconst\u001b[39m { name\u001b[33m,\u001b[39m value } \u001b[33m=\u001b[39m event\u001b[33m.\u001b[39mtarget\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 | \u001b[39m      \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msetState(state \u001b[33m=>\u001b[39m ({\u001b[0m\n\u001b[0m \u001b[90m 26 | \u001b[39m         fields\u001b[33m:\u001b[39m {\u001b[33m...\u001b[39mstate\u001b[33m.\u001b[39mfields\u001b[33m,\u001b[39m [name]\u001b[33m:\u001b[39m value}\u001b[33m,\u001b[39m\u001b[0m\n\nAdd @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugins' section of your Babel config to enable transformation.\nIf you want to leave it as-is, add @babel/plugin-syntax-class-properties (https://git.io/vb4yQ) to the 'plugins' section to enable parsing.\n    at Object._raise (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:748:17)\n    at Object.raiseWithData (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:741:17)\n    at Object.expectPlugin (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:9106:18)\n    at Object.parseClassProperty (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12722:12)\n    at Object.pushClassProperty (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12690:30)\n    at Object.parseClassMemberWithIsStatic (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12595:14)\n    at Object.parseClassMember (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12532:10)\n    at D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12477:14\n    at Object.withTopicForbiddingContext (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:11516:14)\n    at Object.parseClassBody (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12454:10)\n    at Object.parseClass (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12427:22)\n    at Object.parseStatementContent (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:11718:21)\n    at Object.parseStatement (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:11676:17)\n    at Object.parseBlockOrModuleBlockBody (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12258:25)\n    at Object.parseBlockBody (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:12249:10)\n    at Object.parseTopLevel (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:11607:10)\n    at Object.parse (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:13415:10)\n    at parse (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\parser\\lib\\index.js:13468:38)\n    at parser (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\@babel\\core\\lib\\transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\gensync\\index.js:261:32)\n    at D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (D:\\laragon2.0\\www\\react-tailwind-app\\node_modules\\gensync\\index.js:223:11)");
+
+/***/ }),
+
+/***/ "./resources/js/components/category/CategoryList.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/category/CategoryList.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/hi */ "./node_modules/react-icons/hi/index.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+var CategoryList = /*#__PURE__*/function (_React$Component) {
+  _inherits(CategoryList, _React$Component);
+
+  var _super = _createSuper(CategoryList);
+
+  function CategoryList() {
+    _classCallCheck(this, CategoryList);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(CategoryList, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "my-container w-full mx-auto sm:px-6 lg:px-8 py-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "flex justify-between mb-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+        className: "font-bold text-2xl"
+      }, "Listado de categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        to: "/category/new",
+        className: "btn-create"
+      }, "Crear categoria")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+        className: "min-w-full divide-y divide-gray-200"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", {
+        className: "bg-gray-50"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+        scope: "col",
+        className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+      }, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+        scope: "col",
+        className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+      }, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+        scope: "col",
+        className: "relative px-6 py-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "sr-only"
+      }, "Edit")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", {
+        className: "bg-white divide-y divide-gray-200"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+        className: "px-6 py-4 whitespace-nowrap"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "text-sm text-gray-900"
+      }, "Regional Paradigm Technician")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+        className: "px-6 py-4 whitespace-nowrap"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+      }, "Active")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+        className: "flex items-center justify-end gap-1 px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        href: "#",
+        className: "bg-pink-700 rounded p-2 text-white hover:bg-pink-900"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_2__["HiOutlineInformationCircle"], {
+        size: 22
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        href: "#",
+        className: "bg-blue-700 rounded p-2 text-white hover:bg-blue-900"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_2__["HiOutlinePencilAlt"], {
+        size: 22
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "bg-red-700 rounded p-2 text-white hover:bg-red-900 active:bg-red-900 focus:border-none"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_2__["HiOutlineTrash"], {
+        size: 22
+      }))))))))));
+    }
+  }]);
+
+  return CategoryList;
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CategoryList);
 
 /***/ }),
 
@@ -74473,10 +74682,20 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
 /* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.js");
+/* harmony import */ var _components_category_CategoryList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/category/CategoryList */ "./resources/js/components/category/CategoryList.js");
+/* harmony import */ var _components_category_CategoryCreate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/category/CategoryCreate */ "./resources/js/components/category/CategoryCreate.js");
+
+
 
 var routes = [{
   path: '/dashboard',
   component: _components_Home__WEBPACK_IMPORTED_MODULE_0__["default"]
+}, {
+  path: '/category',
+  component: _components_category_CategoryList__WEBPACK_IMPORTED_MODULE_1__["default"]
+}, {
+  path: '/category/new',
+  component: _components_category_CategoryCreate__WEBPACK_IMPORTED_MODULE_2__["default"]
 }];
 
 /***/ }),

@@ -47,9 +47,9 @@ const NavBarV2 = () => {
                   <div className="-mx-0.5">
                      <HiOutlineShoppingBag size={28} />
                   </div>
-                     <p className="ml-5 text-sm uppercase font-semibold">
-                        Productos
-                     </p>
+                  <p className="ml-5 text-sm uppercase font-semibold">
+                     Productos
+                  </p>
                </NavLink>
 
                <NavLink

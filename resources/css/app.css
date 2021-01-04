@@ -1,3 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.btn-create {
+   @apply bg-green-600 p-2 text-white rounded;
+}
+
+.btn-create:hover {
+   @apply bg-green-900
+}

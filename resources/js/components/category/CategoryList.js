@@ -2,8 +2,16 @@ import { fromPairs } from 'lodash';
 import React from 'react';
 import { HiOutlineTrash, HiOutlinePencilAlt, HiOutlineInformationCircle } from "react-icons/hi";
 import { Link } from 'react-router-dom';
+import { fetchAllData } from '../../api/crudActions';
 
 class CategoryList extends React.Component {
+
+  async componentDidMount() {
+    const categories = await fetchAllData('category');
+
+    console.log(categories);
+
+  }
 
    render() {
       return (

@@ -75300,9 +75300,9 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
         //    <div className="field">
         //       <div className={errors.name ? 'field error' : 'field'}>
         //          <label>Nombre:</label>
-        //          <input 
-        //             type="text" name="name" placeholder="Nombre" 
-        //             value={fields.name} 
+        //          <input
+        //             type="text" name="name" placeholder="Nombre"
+        //             value={fields.name}
         //             onChange={this.onInputChange}
         //          />
         //          {
@@ -75339,7 +75339,7 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
           id: "street_address",
           className: "mt-1 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md"
         })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "px-4 py-3 bg-gray-50 text-right sm:px-2"
+          className: "px-4 py-3 text-right sm:px-2"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           type: "submit",
           className: "inline-flex justify-center py-2 px-4 shadow-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -75465,7 +75465,7 @@ var CategoryList = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_2__["HiOutlinePencilAlt"], {
         size: 22
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-        className: "bg-red-700 rounded p-2 text-white hover:bg-red-900 active:bg-red-900 focus:border-none"
+        className: "bg-red-700 rounded p-2 text-white hover:bg-red-900 active:bg-red-900 focus:outline-none"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_2__["HiOutlineTrash"], {
         size: 22
       }))))))))));

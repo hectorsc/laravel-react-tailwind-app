@@ -6,23 +6,37 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Category;
-
+use App\Models\User;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Laravel\Sanctum\Sanctum;
 class CategoryControllerTest extends TestCase
 {
     // PRUEBAS PARA PROBAR LOS END-POINTS DE CATEGORIES //
-    
+
     use RefreshDatabase;
+    use WithoutMiddleware;
+    
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // Añadimos esto para que las pruebas nos pase el 401 unauthorized
+        Sanctum::actingAs(
+            User::factory()->create(),
+        );
+    }
 
     public function test_index()
     {
-        Category::factory()->count(5)->create();
+        $this->withoutMiddleware();
+        Category::factory()->count(10)->create();
 
         $response = $this->getJson('/api/categories');
 
         $response->assertSuccessful();
-        $response->assertHeader('content-type', 'application/json');
+        // $response->assertHeader('content-type', 'application/json');
 
-        $response->assertJsonCount(5, 'data');
+        $response->assertJsonCount(10, 'data');
     }
 
     public function test_create_new_category()

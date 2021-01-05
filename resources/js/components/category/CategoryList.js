@@ -57,7 +57,7 @@ class CategoryList extends React.Component {
                   <HiOutlinePencilAlt size={22} />
 
                 </a>
-                <button className="bg-red-700 rounded p-2 text-white hover:bg-red-900 active:bg-red-900 focus:border-none">
+                <button className="bg-red-700 rounded p-2 text-white hover:bg-red-900 active:bg-red-900 focus:outline-none">
                   <HiOutlineTrash size={22} />
 
                 </button>

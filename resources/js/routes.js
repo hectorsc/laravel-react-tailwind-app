@@ -1,7 +1,8 @@
 import Home from "./components/Home";
 
 import CategoryList from './components/category/CategoryList';
-import CategoryCreate from "./components/category/CategoryCreate";
+import CategoryCreate from './components/category/CategoryCreate';
+import CategoryEdit from './components/category/CategoryEdit';
 
 
 export const routes = [
@@ -9,4 +10,5 @@ export const routes = [
 
    { path: '/category', component: CategoryList },
    { path: '/category/new', component: CategoryCreate},
+   { path: '/category/edit/:id', component: CategoryEdit },
 ];

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CategoryForm from './CategoryForm';
-// import { create } from '../../api/crudActions';
+import { create } from '../../api/crudActions';
 
 
 class CategoryCreate extends React.Component {
 
-   // onSubmit = async formValues => {
-   //    return await create('category', formValues);
-   // }
+   onSubmit = async formValues => {
+      return await create('category', formValues);
+   }
 
    render() {
 

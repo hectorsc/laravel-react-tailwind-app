@@ -7,5 +7,26 @@
 }
 
 .btn-create:hover {
-   @apply bg-indigo-900
+   @apply bg-indigo-900;
+}
+
+.data-active {
+   @apply bg-green-100 text-green-800;
+}
+
+.data-inactive {
+   @apply bg-red-100 text-red-800;
+}
+
+/* Validate Errors */
+.label-error {
+   @apply text-red-600;
+}
+
+.input-error {
+   @apply bg-red-200 bg-opacity-50 border-red-400;
+}
+
+.input-error:focus {
+   @apply border-red-500;
 }

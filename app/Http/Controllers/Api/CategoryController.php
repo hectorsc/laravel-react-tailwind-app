@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Resources\CategoryCollection;
+use App\Http\Resources\CategoryResource;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 
@@ -24,7 +25,8 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-      
+        // nos falta la relacion cuando tengamos el product
+        return new CategoryResource($category);
     }
 
     public function update(CategoryRequest $request, Category $category)

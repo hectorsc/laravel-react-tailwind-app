@@ -16,7 +16,8 @@ class CategoryResource extends JsonResource
     {
         return [
             'id' => (int) $this->id,
-            'name' => (string) $this->name
+            'name' => (string) $this->name,
+            'active' => (boolean) $this->active
         ];
     }
 }

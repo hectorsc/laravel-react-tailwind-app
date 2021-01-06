@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $guarder = [];
+    protected $guarded = [];
 
     public function user()
     {

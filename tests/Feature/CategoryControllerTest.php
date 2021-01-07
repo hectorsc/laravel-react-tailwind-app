@@ -20,7 +20,8 @@ class CategoryControllerTest extends TestCase
     {
         parent::setUp();
 
-        // Añadimos esto para que las pruebas nos pase el 401 unauthorized
+        // Añadimos esto para que las pruebas nos pase el
+        // 401 unauthorized pq esto nos logea
         Sanctum::actingAs(
             User::factory()->create(),
         );
@@ -28,7 +29,6 @@ class CategoryControllerTest extends TestCase
 
     public function test_index()
     {
-        $this->withoutMiddleware();
         Category::factory()->count(10)->create();
 
         $response = $this->getJson('/api/categories');

@@ -70,7 +70,7 @@ nav.my-nav {
 
 /* esto es lo que hace que se abra el menu */
 #menu:checked~nav {
-   width: 16rem;
+   width: 16rem !important;
 }
 
 @media (max-width: 885px) {

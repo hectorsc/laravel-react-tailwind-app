@@ -8378,7 +8378,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "input#menu {\n  display: none;\n}\n\n.icon {\n  cursor: pointer;\n  display: block;\n  padding: 28px;\n  width: 24px;\n}\n\nlabel.icon {\n  position: absolute;\n  z-index: 200;\n}\n\n.icon .menu,\r\n.icon .menu::before,\r\n.icon .menu::after {\n  background: white;\n  content: '';\n  display: block;\n  height: 2px;\n  position: absolute;\n  transition: background ease .3s, top ease .3s .3s, transform ease .3s;\n  width: 20px;\n}\n\n.icon:hover .menu,\r\n.icon:hover .menu::before,\r\n.icon:hover .menu::after {\n  background: #bf125d;\n}\n\n.icon .menu {\n  left: 18px;\n  top: 27px;\n}\n\n.icon .menu::before {\n  top: -6px;\n}\n\n.icon .menu::after {\n  top: 6px;\n}\n\n#menu:checked+.icon .menu {\n  background: transparent;\n}\n\n#menu:checked+.icon .menu::before {\n  transform: rotate(45deg);\n}\n\n#menu:checked+.icon .menu::after {\n  transform: rotate(-45deg);\n}\n\n#menu:checked+.icon .menu::before,\r\n#menu:checked+.icon .menu::after {\n  top: 0;\n  transition: top ease .3s, transform ease .3s .3s;\n}\n\nnav.my-nav {\n  transition: width ease .6s;\n  overflow: hidden;\n}\n\n/* esto es lo que hace que se abra el menu */\n\n#menu:checked~nav {\n  width: 16rem;\n}\n\n@media (max-width: 885px) {\n  .my-nav {\n    min-width: 56px;\n  }\n\n  .my-container {\n    overflow-x: hidden;\n  }\n\n  #menu:checked~nav {\n    width: 0;\n  }\n\n  label.icon {\n    display:none;\n  }\n}", ""]);
+exports.push([module.i, "input#menu {\n  display: none;\n}\n\n.icon {\n  cursor: pointer;\n  display: block;\n  padding: 28px;\n  width: 24px;\n}\n\nlabel.icon {\n  position: absolute;\n  z-index: 200;\n}\n\n.icon .menu,\r\n.icon .menu::before,\r\n.icon .menu::after {\n  background: white;\n  content: '';\n  display: block;\n  height: 2px;\n  position: absolute;\n  transition: background ease .3s, top ease .3s .3s, transform ease .3s;\n  width: 20px;\n}\n\n.icon:hover .menu,\r\n.icon:hover .menu::before,\r\n.icon:hover .menu::after {\n  background: #bf125d;\n}\n\n.icon .menu {\n  left: 18px;\n  top: 27px;\n}\n\n.icon .menu::before {\n  top: -6px;\n}\n\n.icon .menu::after {\n  top: 6px;\n}\n\n#menu:checked+.icon .menu {\n  background: transparent;\n}\n\n#menu:checked+.icon .menu::before {\n  transform: rotate(45deg);\n}\n\n#menu:checked+.icon .menu::after {\n  transform: rotate(-45deg);\n}\n\n#menu:checked+.icon .menu::before,\r\n#menu:checked+.icon .menu::after {\n  top: 0;\n  transition: top ease .3s, transform ease .3s .3s;\n}\n\nnav.my-nav {\n  transition: width ease .6s;\n  overflow: hidden;\n}\n\n/* esto es lo que hace que se abra el menu */\n\n#menu:checked~nav {\n  width: 16rem !important;\n}\n\n@media (max-width: 885px) {\n  .my-nav {\n    min-width: 56px;\n  }\n\n  .my-container {\n    overflow-x: hidden;\n  }\n\n  #menu:checked~nav {\n    width: 0;\n  }\n\n  label.icon {\n    display:none;\n  }\n}", ""]);
 
 // exports
 
@@ -75554,12 +75554,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var LoadingData = function LoadingData(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "ui",
+    className: "ui segment",
     style: style(props)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui active inverted dimmer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "ui ".concat(props.type, " text loader")
+    className: "ui ".concat(props.type, " text loader"),
+    style: {
+      top: '41%'
+    }
   }, props.message)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null));
 };
 
@@ -75577,7 +75580,7 @@ var style = function style(props) {
 
     default:
       return {
-        padding: '22px'
+        padding: '50px'
       };
   }
 };
@@ -75587,6 +75590,34 @@ LoadingData.defaultProps = {
   type: 'small'
 };
 /* harmony default export */ __webpack_exports__["default"] = (LoadingData);
+
+/***/ }),
+
+/***/ "./resources/js/components/Spinner.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/Spinner.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Spinner = function Spinner(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui active inverted dimmer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui large text loader"
+  }, props.message));
+};
+
+Spinner.defaultProps = {
+  message: 'Loading...'
+};
+/* harmony default export */ __webpack_exports__["default"] = (Spinner);
 
 /***/ }),
 
@@ -76177,6 +76208,171 @@ var CategoryList = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/category/CategoryShow.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/category/CategoryShow.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _api_crudActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api/crudActions */ "./resources/js/api/crudActions.js");
+/* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Spinner */ "./resources/js/components/Spinner.js");
+/* harmony import */ var _history__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../history */ "./resources/js/history.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+
+var CategoryShow = /*#__PURE__*/function (_React$Component) {
+  _inherits(CategoryShow, _React$Component);
+
+  var _super = _createSuper(CategoryShow);
+
+  function CategoryShow(props) {
+    var _this;
+
+    _classCallCheck(this, CategoryShow);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      category: [],
+      products: [],
+      loading: true,
+      result: ''
+    };
+    return _this;
+  }
+
+  _createClass(CategoryShow, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response, result;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return Object(_api_crudActions__WEBPACK_IMPORTED_MODULE_3__["fetchData"])('category', this.props.match.params.id);
+
+              case 2:
+                response = _context.sent;
+                response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                result = response.data.products.length == 0 ? 'no hay resultados...' : '';
+                this.setState({
+                  category: response,
+                  products: response.products,
+                  loading: false,
+                  result: result
+                });
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "renderList",
+    value: function renderList() {
+      return this.state.products.map(function (product) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "item",
+          key: product.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "content",
+          style: {
+            paddingTop: '10px'
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, product.name), " \xA0 | \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "REF:"), " ", product.REF, " \xA0 | \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "Precio:"), " ", product.price, " \xA0 | \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "Precio en oferta :"), " ", product.offer_price));
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          category = _this$state.category,
+          loading = _this$state.loading,
+          result = _this$state.result;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "ui card",
+        style: {
+          width: '100%'
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "header"
+      }, category.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "my-list-divided ui list divided segment",
+        style: {
+          padding: '10px'
+        }
+      }, result)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "extra content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: '/category',
+        className: "ui labeled icon button primary"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "left arrow icon"
+      }), "Volver"))));
+    }
+  }]);
+
+  return CategoryShow;
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (CategoryShow);
+
+/***/ }),
+
 /***/ "./resources/js/components/datatable/DataTable.js":
 /*!********************************************************!*\
   !*** ./resources/js/components/datatable/DataTable.js ***!
@@ -76446,7 +76642,9 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
         className: "min-w-full divide-y divide-gray-200 bg-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", {
         className: "bg-gray-50"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, this.renderTableColumns(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+        className: "py-5"
+      }) : this.renderTableColumns(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
         key: "edit",
         scope: "col",
         className: "relative px-6 py-3"
@@ -76793,6 +76991,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_category_CategoryList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/category/CategoryList */ "./resources/js/components/category/CategoryList.js");
 /* harmony import */ var _components_category_CategoryCreate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/category/CategoryCreate */ "./resources/js/components/category/CategoryCreate.js");
 /* harmony import */ var _components_category_CategoryEdit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/category/CategoryEdit */ "./resources/js/components/category/CategoryEdit.js");
+/* harmony import */ var _components_category_CategoryShow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/category/CategoryShow */ "./resources/js/components/category/CategoryShow.js");
+
 
 
 
@@ -76809,6 +77009,9 @@ var routes = [{
 }, {
   path: '/category/edit/:id',
   component: _components_category_CategoryEdit__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: '/category/:id',
+  component: _components_category_CategoryShow__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 
 /***/ }),

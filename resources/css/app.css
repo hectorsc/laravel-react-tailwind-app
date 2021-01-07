@@ -24,9 +24,9 @@
 }
 
 .input-error {
-   @apply bg-red-200 bg-opacity-50 border-red-400;
+   @apply bg-red-200 bg-opacity-50 border-red-400 !important;
 }
 
 .input-error:focus {
-   @apply border-red-500;
+   @apply border-red-500 !important;
 }

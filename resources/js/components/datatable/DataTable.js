@@ -101,7 +101,7 @@ class DataTable extends React.Component {
                   <table className="min-w-full divide-y divide-gray-200 bg-white">
                      <thead className="bg-gray-50">
                         <tr>
-                           {  this.renderTableColumns()  }
+                           { loading ? <td className="py-5"></td> : this.renderTableColumns()  }
                            <th key="edit" scope="col" className="relative px-6 py-3">
                               <span className="sr-only">Edit</span>
                            </th>

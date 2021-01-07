@@ -23,4 +23,6 @@ module.exports = {
         require('@tailwindcss/ui'),
         require('@tailwindcss/forms')
     ],
+    
+    important : true,
 };

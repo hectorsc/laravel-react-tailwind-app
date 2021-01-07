@@ -12,7 +12,8 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/loader.min.css" integrity="sha512-+6VqtNJxRmuo2S1AnpgaP6T2CtH5a9aCX2mBIl58uE5DMtxxT9O6JNt2MQvIJAD1CGgJ98ERIKhGJkcX1OArVg==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/form.min.css" integrity="sha512-GqdyivmcmveCy9pRf2yTD/TPYXVmbPFDojvy15i3xuLLy9nkgNhDRMk6+Dt/uYDdnItFUFF7WqW7GoGv+gPX+A==" crossorigin="anonymous" />
         @livewireStyles
 
         <!-- Scripts -->

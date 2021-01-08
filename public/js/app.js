@@ -76293,6 +76293,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
 
               case 2:
                 response = _context.sent;
+                console.log('esto.....', response);
                 response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
                 result = response.data.products.length == 0 ? 'no hay resultados...' : '';
                 this.setState({
@@ -76302,7 +76303,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
                   result: result
                 });
 
-              case 6:
+              case 7:
               case "end":
                 return _context.stop();
             }

@@ -16,6 +16,7 @@ class CategoryShow extends React.Component {
 
    async componentDidMount() {
       const response = await fetchData('category', this.props.match.params.id);
+      console.log('esto.....', response);
       response.exception && history.push('/page-404');
       let result = response.data.products.length == 0 ? 'no hay resultados...': '';
       this.setState({ 

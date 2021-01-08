@@ -25,7 +25,6 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        // nos falta la relacion cuando tengamos el product
         return new CategoryResource($category);
     }
 

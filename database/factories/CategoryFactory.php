@@ -29,7 +29,7 @@ class CategoryFactory extends Factory
             'user_id' => function () {
                 return User::query()->inRandomOrder()->first()->id;
             },
-            'name' => $this->faker->word,
+            'name' => $this->faker->unique()->word,
         ];
     }
 }

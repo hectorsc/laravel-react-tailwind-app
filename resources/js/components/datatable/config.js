@@ -13,8 +13,8 @@ export const columnsPost = [
 export const columnsProduct = [
    {name: 'nombre', selector: 'name'},
    {name: 'ref', selector: 'ref'},
-   {name: 'precio', selector: 'price'},
-   {name: 'precio en oferta', selector: 'offer_price'},
+   {name: 'precio', selector: 'price', sign: '€'},
+   {name: 'precio en oferta', selector: 'offer_price', sign: '€'},
    {name: 'estado', selector:'state'}
 ];
 

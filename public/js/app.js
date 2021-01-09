@@ -76674,7 +76674,7 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
             className: "px-6 py-4 whitespace-nowrap"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
             className: "text-sm text-gray-900"
-          }, data[column.selector]));
+          }, data[column.selector], " ", column.sign, " "));
         }), !simpleTable && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
           className: "flex items-center justify-end gap-1 px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -76791,10 +76791,12 @@ var columnsProduct = [{
   selector: 'ref'
 }, {
   name: 'precio',
-  selector: 'price'
+  selector: 'price',
+  sign: '€'
 }, {
   name: 'precio en oferta',
-  selector: 'offer_price'
+  selector: 'offer_price',
+  sign: '€'
 }, {
   name: 'estado',
   selector: 'state'

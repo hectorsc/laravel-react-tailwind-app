@@ -7,12 +7,13 @@ import { columns, sweetAlertCategory } from '../datatable/config';
 class CategoryList extends React.Component {
 
    fetchCategories = async () => {
-      return await fetchAllData('category');
+      const response = await fetchAllData('category');
+      return response.data;
    }
    
    render() {
       return (
-         <div className="my-container w-full mx-auto sm:px-6 lg:px-8 py-6">
+         <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <div className="flex justify-between mb-4">
                <h1 className="font-bold text-2xl">Categorías</h1>
                <Link to='/category/new' className="btn-create">Crear categoría</Link>

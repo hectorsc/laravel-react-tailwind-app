@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { fetchData } from '../../api/crudActions';
 import Spinner from '../Spinner';
 import history from '../../history';
+import DataTable from '../datatable/DataTable';
+import { columnsProduct } from '../datatable/config';
+import { HiOutlineArrowLeft } from "react-icons/hi";
 
 class CategoryShow extends React.Component {
 
@@ -10,63 +13,61 @@ class CategoryShow extends React.Component {
       super(props);
       this.state = { 
          category: [], products: [],
-         loading: true, result: ''
+         loading: true
       };
    }
 
    async componentDidMount() {
-      const response = await fetchData('category', this.props.match.params.id);
-      console.log('esto.....', response);
-      response.exception && history.push('/page-404');
-      let result = response.data.products.length == 0 ? 'no hay resultados...': '';
+      const response = await this.fetchCategory();
+      if (response.exception) {
+         history.push('/page-404');
+         return;
+      }
       this.setState({ 
-         category: response, 
-         products:response.products,
+         category: response.data, 
          loading: false,
-         result
       });
    }
 
-   renderList() {
-      return this.state.products.map(product => {
-         return(
-            <div className="item" key={product.id}>
-               <div className="content" style={{ paddingTop: '10px' }}>
-                  <strong>{product.name}</strong> &nbsp; | &nbsp; 
-                  <strong>REF:</strong> {product.REF} &nbsp; | &nbsp; 
-                  <strong>Precio:</strong> {product.price} &nbsp; | &nbsp;
-                  <strong>Precio en oferta :</strong> {product.offer_price}
-               </div>
-            </div>
-         );
-      })
+   fetchCategory = async () => {
+      const response = await fetchData("category", this.props.match.params.id);
+      return response;
+   }
+
+   fetchProductsOfCategory = async () => {
+      const response = await this.fetchCategory();
+      const result = response.exception ? [] : response.data.products;
+      return result;
    }
 
    render() {
-      const { category, loading, result } = this.state;
+      const { category, loading } = this.state;
       return (
          <React.Fragment>
             {
-               loading ? <Spinner /> :
-               <div className="ui card" style={{ width: '100%' }}>
-                  <div className="content">
-                     <div className="header">{category.name}</div>
-                  </div>
-                  <div className="content"> 
-                     <div className="my-list-divided ui list divided segment" style={{ padding: '10px'}} >
-                        {/* {this.renderList()} */}
-                        {result}
+               loading ? 
+                  <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
+                     <Spinner />
+                  </div> 
+               :
+                  <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
+                     <div className="flex justify-between mb-4">
+                        <h1 className="font-bold text-2xl">{category.name} tiene los siguientes productos asociados</h1>
+                     </div>
+                     <DataTable 
+                        data={this.fetchProductsOfCategory} 
+                        columns={columnsProduct}
+                        simpleTable={true}
+                     />
+                     <div className="mt-6">
+                        <Link to='/category' className="inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900">
+                           <HiOutlineArrowLeft size={25} />
+                           <p className="pl-3">Volver</p>
+                        </Link>
                      </div>
                   </div>
-                  <div className="extra content">
-                     <Link to={'/category'} className="ui labeled icon button primary">
-                        <i className="left arrow icon"></i>
-                        Volver
-                     </Link>
-                  </div>
-               </div>
             }
-         </React.Fragment>
+         </React.Fragment>  
       );
    }
 };

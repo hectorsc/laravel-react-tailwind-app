@@ -75554,15 +75554,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var LoadingData = function LoadingData(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "ui segment",
+    className: "ui segment flex justify-center",
     style: style(props)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui active inverted dimmer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "ui ".concat(props.type, " text loader"),
-    style: {
-      top: '41%'
-    }
+    className: "ui ".concat(props.type, " text loader relative")
   }, props.message)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null));
 };
 
@@ -75580,7 +75577,7 @@ var style = function style(props) {
 
     default:
       return {
-        padding: '50px'
+        padding: '20px'
       };
   }
 };
@@ -75590,6 +75587,36 @@ LoadingData.defaultProps = {
   type: 'small'
 };
 /* harmony default export */ __webpack_exports__["default"] = (LoadingData);
+
+/***/ }),
+
+/***/ "./resources/js/components/NotFound.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/NotFound.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var NotFound = function NotFound() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col items-center p-10 pt-20 w-full mx-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: {
+      fontSize: '8rem',
+      lineHeight: '1'
+    }
+  }, "404"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "text-3xl"
+  }, "P\xE1gina no encontrada"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lo sentimos pero la p\xE1gina que busca no existe."));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NotFound);
 
 /***/ }),
 
@@ -75608,9 +75635,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var Spinner = function Spinner(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "ui active inverted dimmer"
+    className: "ui active inverted dimmer w-full pt-40"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "ui large text loader"
+    className: "ui large text loader relative"
   }, props.message));
 };
 
@@ -75822,13 +75849,21 @@ var CategoryEdit = /*#__PURE__*/function (_React$Component) {
 
             case 2:
               response = _context.sent;
-              response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
 
+              if (!response.exception) {
+                _context.next = 6;
+                break;
+              }
+
+              _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+              return _context.abrupt("return");
+
+            case 6:
               _this.setState({
                 response: response.data
               });
 
-            case 5:
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -76159,6 +76194,7 @@ var CategoryList = /*#__PURE__*/function (_React$Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "fetchCategories", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -76167,9 +76203,10 @@ var CategoryList = /*#__PURE__*/function (_React$Component) {
               return Object(_api_crudActions__WEBPACK_IMPORTED_MODULE_3__["fetchAllData"])('category');
 
             case 2:
-              return _context.abrupt("return", _context.sent);
+              response = _context.sent;
+              return _context.abrupt("return", response.data);
 
-            case 3:
+            case 4:
             case "end":
               return _context.stop();
           }
@@ -76184,7 +76221,7 @@ var CategoryList = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "my-container w-full mx-auto sm:px-6 lg:px-8 py-6"
+        className: "w-full mx-auto sm:px-6 lg:px-8 py-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "flex justify-between mb-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
@@ -76225,6 +76262,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_crudActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api/crudActions */ "./resources/js/api/crudActions.js");
 /* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Spinner */ "./resources/js/components/Spinner.js");
 /* harmony import */ var _history__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../history */ "./resources/js/history.js");
+/* harmony import */ var _datatable_DataTable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../datatable/DataTable */ "./resources/js/components/datatable/DataTable.js");
+/* harmony import */ var _datatable_config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../datatable/config */ "./resources/js/components/datatable/config.js");
+/* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-icons/hi */ "./node_modules/react-icons/hi/index.esm.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 
@@ -76253,6 +76293,11 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
 
 
 
@@ -76270,11 +76315,54 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CategoryShow);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "fetchCategory", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return Object(_api_crudActions__WEBPACK_IMPORTED_MODULE_3__["fetchData"])("category", _this.props.match.params.id);
+
+            case 2:
+              response = _context.sent;
+              return _context.abrupt("return", response);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "fetchProductsOfCategory", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var response, result;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return _this.fetchCategory();
+
+            case 2:
+              response = _context2.sent;
+              result = response.exception ? [] : response.data.products;
+              return _context2.abrupt("return", result);
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
     _this.state = {
       category: [],
       products: [],
-      loading: true,
-      result: ''
+      loading: true
     };
     return _this;
   }
@@ -76282,33 +76370,38 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
   _createClass(CategoryShow, [{
     key: "componentDidMount",
     value: function () {
-      var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var response, result;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
-                _context.next = 2;
-                return Object(_api_crudActions__WEBPACK_IMPORTED_MODULE_3__["fetchData"])('category', this.props.match.params.id);
+                _context3.next = 2;
+                return this.fetchCategory();
 
               case 2:
-                response = _context.sent;
-                console.log('esto.....', response);
-                response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
-                result = response.data.products.length == 0 ? 'no hay resultados...' : '';
+                response = _context3.sent;
+
+                if (!response.exception) {
+                  _context3.next = 6;
+                  break;
+                }
+
+                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                return _context3.abrupt("return");
+
+              case 6:
                 this.setState({
-                  category: response,
-                  products: response.products,
-                  loading: false,
-                  result: result
+                  category: response.data,
+                  loading: false
                 });
 
               case 7:
               case "end":
-                return _context.stop();
+                return _context3.stop();
             }
           }
-        }, _callee, this);
+        }, _callee3, this);
       }));
 
       function componentDidMount() {
@@ -76318,51 +76411,33 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
       return componentDidMount;
     }()
   }, {
-    key: "renderList",
-    value: function renderList() {
-      return this.state.products.map(function (product) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "item",
-          key: product.id
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "content",
-          style: {
-            paddingTop: '10px'
-          }
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, product.name), " \xA0 | \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "REF:"), " ", product.REF, " \xA0 | \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "Precio:"), " ", product.price, " \xA0 | \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, "Precio en oferta :"), " ", product.offer_price));
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$state = this.state,
           category = _this$state.category,
-          loading = _this$state.loading,
-          result = _this$state.result;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "ui card",
-        style: {
-          width: '100%'
-        }
+          loading = _this$state.loading;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "w-full mx-auto sm:px-6 lg:px-8 py-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "w-full mx-auto sm:px-6 lg:px-8 py-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "header"
-      }, category.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "my-list-divided ui list divided segment",
-        style: {
-          padding: '10px'
-        }
-      }, result)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "extra content"
+        className: "flex justify-between mb-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+        className: "font-bold text-2xl"
+      }, category.name, " tiene los siguientes productos asociados")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_datatable_DataTable__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        data: this.fetchProductsOfCategory,
+        columns: _datatable_config__WEBPACK_IMPORTED_MODULE_7__["columnsProduct"],
+        simpleTable: true
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "mt-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: '/category',
-        className: "ui labeled icon button primary"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "left arrow icon"
-      }), "Volver"))));
+        to: "/category",
+        className: "inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_8__["HiOutlineArrowLeft"], {
+        size: 25
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        className: "pl-3"
+      }, "Volver")))));
     }
   }]);
 
@@ -76454,7 +76529,7 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
 
             case 2:
               data = _context.sent;
-              result = data.data.length == 0 ? 'No hay resultados...' : '';
+              result = data.length == 0 ? 'No hay resultados...' : '';
 
               _this.setState({
                 data: data,
@@ -76475,7 +76550,8 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
       data: [],
       loading: true,
       deleted: false,
-      result: ''
+      result: '',
+      simpleTable: props.simpleTable ? true : false
     };
     return _this;
   }
@@ -76579,20 +76655,27 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
 
       var _this$props = this.props,
           path = _this$props.path,
-          sweetAlert = _this$props.sweetAlert;
-      var data = this.state.data;
-      return data.data.map(function (data) {
+          sweetAlert = _this$props.sweetAlert,
+          columns = _this$props.columns;
+      var _this$state = this.state,
+          data = _this$state.data,
+          simpleTable = _this$state.simpleTable;
+      return data.map(function (data) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
           key: data.id
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
-          className: "px-6 py-4 whitespace-nowrap"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "text-sm text-gray-900"
-        }, data.name)), data.active !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
-          className: "px-6 py-4 whitespace-nowrap"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-          className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full ".concat(data.active ? 'data-active' : 'data-inactive')
-        }, data.active ? 'Activado' : 'Desactivado')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+        }, columns.map(function (column, id) {
+          return column.selector === 'state' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+            key: id,
+            className: "px-6 py-4 whitespace-nowrap"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+            className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full ".concat(data.active ? 'data-active' : 'data-inactive')
+          }, data.active ? 'Activado' : 'Desactivado')) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+            key: id,
+            className: "px-6 py-4 whitespace-nowrap"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+            className: "text-sm text-gray-900"
+          }, data[column.selector]));
+        }), !simpleTable && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
           className: "flex items-center justify-end gap-1 px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/".concat(path, "/").concat(data.id),
@@ -76630,9 +76713,10 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          loading = _this$state.loading,
-          result = _this$state.result;
+      var _this$state2 = this.state,
+          loading = _this$state2.loading,
+          result = _this$state2.result,
+          simpleTable = _this$state2.simpleTable;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -76645,7 +76729,7 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
         className: "bg-gray-50"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
         className: "py-5"
-      }) : this.renderTableColumns(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      }) : this.renderTableColumns(), !simpleTable && !loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
         key: "edit",
         scope: "col",
         className: "relative px-6 py-3"
@@ -76653,7 +76737,9 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
         className: "sr-only"
       }, "Edit")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", {
         className: "bg-white divide-y divide-gray-200"
-      }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LoadingData__WEBPACK_IMPORTED_MODULE_3__["default"], null))) : this.renderTableData(), result ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+        className: "w-full"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LoadingData__WEBPACK_IMPORTED_MODULE_3__["default"], null))) : this.renderTableData(), result ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "px-6 py-3"
       }, result))) : null)))));
     }
@@ -76671,18 +76757,19 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
 /*!*****************************************************!*\
   !*** ./resources/js/components/datatable/config.js ***!
   \*****************************************************/
-/*! exports provided: columns, columnsPost, sweetAlertCategory, sweetAlertPost, sweetAlertProduct, sweetAlertTag */
+/*! exports provided: columns, columnsPost, columnsProduct, sweetAlertCategory, sweetAlertPost, sweetAlertProduct, sweetAlertTag */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "columns", function() { return columns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "columnsPost", function() { return columnsPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "columnsProduct", function() { return columnsProduct; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sweetAlertCategory", function() { return sweetAlertCategory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sweetAlertPost", function() { return sweetAlertPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sweetAlertProduct", function() { return sweetAlertProduct; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sweetAlertTag", function() { return sweetAlertTag; });
-// CATEGORY LIST, PRODUCT LIST, TAG LIST
+// CATEGORY LIST, TAG LIST
 var columns = [{
   name: 'nombre',
   selector: 'name'
@@ -76694,6 +76781,23 @@ var columns = [{
 var columnsPost = [{
   name: 'título',
   selector: 'title'
+}]; //PRODUCT LIST
+
+var columnsProduct = [{
+  name: 'nombre',
+  selector: 'name'
+}, {
+  name: 'ref',
+  selector: 'ref'
+}, {
+  name: 'precio',
+  selector: 'price'
+}, {
+  name: 'precio en oferta',
+  selector: 'offer_price'
+}, {
+  name: 'estado',
+  selector: 'state'
 }];
 var sweetAlertCategory = {
   selector: 'name',
@@ -76993,6 +77097,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_category_CategoryCreate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/category/CategoryCreate */ "./resources/js/components/category/CategoryCreate.js");
 /* harmony import */ var _components_category_CategoryEdit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/category/CategoryEdit */ "./resources/js/components/category/CategoryEdit.js");
 /* harmony import */ var _components_category_CategoryShow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/category/CategoryShow */ "./resources/js/components/category/CategoryShow.js");
+/* harmony import */ var _components_NotFound__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/NotFound */ "./resources/js/components/NotFound.js");
+
 
 
 
@@ -77013,6 +77119,9 @@ var routes = [{
 }, {
   path: '/category/:id',
   component: _components_category_CategoryShow__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
+  path: '*',
+  component: _components_NotFound__WEBPACK_IMPORTED_MODULE_5__["default"]
 }];
 
 /***/ }),

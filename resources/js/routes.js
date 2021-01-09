@@ -5,6 +5,8 @@ import CategoryCreate from './components/category/CategoryCreate';
 import CategoryEdit from './components/category/CategoryEdit';
 import CategoryShow from './components/category/CategoryShow';
 
+import NotFound from './components/NotFound';
+
 export const routes = [
    { path: '/dashboard', component: Home },
 
@@ -12,4 +14,6 @@ export const routes = [
    { path: '/category/new', component: CategoryCreate},
    { path: '/category/edit/:id', component: CategoryEdit },
    { path: '/category/:id', component: CategoryShow },
+
+   { path: '*', component: NotFound }
 ];

@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
     public function update(CategoryRequest $request, Category $category)
     {
-        $category->update($request->all());
+        $category->update($request->except('products'));
         return response()->json(['message' => 'Updated successfully'], 200);
     }
 

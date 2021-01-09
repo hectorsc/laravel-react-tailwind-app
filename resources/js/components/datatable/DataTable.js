@@ -10,13 +10,14 @@ class DataTable extends React.Component {
       super(props);
       this.state = {
          data: [], loading: true, 
-         deleted: false, result: ''
+         deleted: false, result: '',
+         simpleTable: props.simpleTable ? true : false,
       };
    }
 
    getData = async () => {
       const data = await this.props.data();
-      let result = data.data.length == 0 ? 'No hay resultados...': '';
+      let result = data.length == 0 ? 'No hay resultados...': '';
       this.setState({data, loading: false, result, deleted: false})
    }
 
@@ -41,42 +42,49 @@ class DataTable extends React.Component {
    }
 
    renderTableData() {
-      const { path, sweetAlert } = this.props;
-      const { data } = this.state;
-      return data.data.map(data => (
+      const { path, sweetAlert, columns } = this.props;
+      const { data, simpleTable } = this.state;
+      return data.map(data => (
          <tr key={data.id}>
-            <td className="px-6 py-4 whitespace-nowrap">
-               <div className="text-sm text-gray-900">{data.name}</div>
-            </td>
             {
-               data.active !== undefined && (
-                  <td className="px-6 py-4 whitespace-nowrap">
-                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${data.active ? 'data-active' : 'data-inactive'}`}>
-                        {data.active ? 'Activado' : 'Desactivado'}
-                     </span>
-                  </td>
+               columns.map((column, id) =>
+                  column.selector === 'state' ?
+                     <td key={id} className="px-6 py-4 whitespace-nowrap">
+                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${data.active ? 'data-active' : 'data-inactive'}`}>
+                           {data.active ? 'Activado' : 'Desactivado'}
+                        </span>
+                     </td>
+                  :
+                     <td key={id} className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">{data[column.selector]}</div>
+                     </td>
                )
             }
-            <td className="flex items-center justify-end gap-1 px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-               <Link
-                  to={`/${path}/${data.id}`}
-                  className="bg-pink-700 rounded p-2 text-white hover:bg-pink-900"
-               >
-                  <HiOutlineInformationCircle size={22} />
-               </Link>
-               <Link
-                  to={`/${path}/edit/${data.id}`}
-                  className="bg-blue-700 rounded p-2 text-white hover:bg-blue-900"
-               >
-                  <HiOutlinePencilAlt size={22} />
-               </Link>
-               <button
-                  onClick={() => this.alert(data.id, data[sweetAlert.selector])} 
-                  className="bg-red-700 rounded p-2 text-white hover:bg-red-900 active:bg-red-900 focus:outline-none"
-               >
-                  <HiOutlineTrash size={22} />
-               </button>
-            </td>
+
+            {
+               !simpleTable && (
+                  <td className="flex items-center justify-end gap-1 px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                     <Link
+                        to={`/${path}/${data.id}`}
+                        className="bg-pink-700 rounded p-2 text-white hover:bg-pink-900"
+                     >
+                        <HiOutlineInformationCircle size={22} />
+                     </Link>
+                     <Link
+                        to={`/${path}/edit/${data.id}`}
+                        className="bg-blue-700 rounded p-2 text-white hover:bg-blue-900"
+                     >
+                        <HiOutlinePencilAlt size={22} />
+                     </Link>
+                     <button
+                        onClick={() => this.alert(data.id, data[sweetAlert.selector])} 
+                        className="bg-red-700 rounded p-2 text-white hover:bg-red-900 active:bg-red-900 focus:outline-none"
+                     >
+                        <HiOutlineTrash size={22} />
+                     </button>
+                  </td>
+               )
+            }  
          </tr>
       ));
    }
@@ -93,7 +101,7 @@ class DataTable extends React.Component {
    }
 
    render() {
-      const { loading, result } = this.state;
+      const { loading, result, simpleTable } = this.state;
       return (
          <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -102,16 +110,20 @@ class DataTable extends React.Component {
                      <thead className="bg-gray-50">
                         <tr>
                            { loading ? <td className="py-5"></td> : this.renderTableColumns()  }
-                           <th key="edit" scope="col" className="relative px-6 py-3">
-                              <span className="sr-only">Edit</span>
-                           </th>
+                           { 
+                              !simpleTable && !loading && (
+                                 <th key="edit" scope="col" className="relative px-6 py-3">
+                                    <span className="sr-only">Edit</span>
+                                 </th>
+                              )
+                           }
                         </tr>
                      </thead>
                      <tbody className="bg-white divide-y divide-gray-200">
                         { 
                            loading ? 
                               <tr>
-                                 <td><LoadingData /></td>   
+                                 <td className="w-full"><LoadingData /></td>   
                               </tr> 
                            : 
                               this.renderTableData()

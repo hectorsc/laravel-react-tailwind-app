@@ -1,4 +1,4 @@
-// CATEGORY LIST, PRODUCT LIST, TAG LIST
+// CATEGORY LIST, TAG LIST
 export const columns = [
    {name: 'nombre', selector: 'name'},
    {name: 'estado', selector: 'state'}
@@ -7,6 +7,15 @@ export const columns = [
 // POST LIST
 export const columnsPost = [
    {name: 'título', selector: 'title'}
+];
+
+//PRODUCT LIST
+export const columnsProduct = [
+   {name: 'nombre', selector: 'name'},
+   {name: 'ref', selector: 'ref'},
+   {name: 'precio', selector: 'price'},
+   {name: 'precio en oferta', selector: 'offer_price'},
+   {name: 'estado', selector:'state'}
 ];
 
 export const sweetAlertCategory = {

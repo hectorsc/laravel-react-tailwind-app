@@ -13,7 +13,7 @@ use Laravel\Sanctum\Sanctum;
 
 class ProductControllerTest extends TestCase
 {
-    // PRUEBAS PARA PROBAR LOS END-POINTS DE CATEGORIES //
+    // PRUEBAS PARA PROBAR LOS END-POINTS DE PRODUCTS //
 
     use RefreshDatabase;
     use WithoutMiddleware;
@@ -70,7 +70,7 @@ class ProductControllerTest extends TestCase
         $response = $this->patchJson("/api/product/{$product->getKey()}", $product->toArray());
         
         // $response->dump();
-        // $response->assertSuccessful(); //error 500 por el CategoryRequest
+        // $response->assertSuccessful(); //error 500 por el ProductRequest
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('products', $product->toArray());
     

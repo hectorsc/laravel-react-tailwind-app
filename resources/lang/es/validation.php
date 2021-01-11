@@ -148,6 +148,10 @@ return [
 
     'attributes' => [
         'name' => 'nombre',
+        'ref'  => 'referencia',
+        'price' => 'precio',
+        'offer_price' => 'precio en oferta',
+        'category_id' => 'elige categoría',
     ],
 
 ];

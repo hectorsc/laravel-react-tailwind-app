@@ -3,17 +3,17 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Models\Product;
+use App\MyLibrary;
 
 class CategoryResource extends JsonResource
 {
     public function toArray($request)
     {
         return [
-            'id' => (int) $this->id,
+            'id' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (int) $this->id),
             'name' => (string) $this->name,
-            'active' => (boolean) $this->active,
-            'products' => ProductResource::collection($this->products)
+            'active' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (boolean) $this->active),
+            'products' => ProductResource::collection($this->whenLoaded('products'))
         ];
     }
 }

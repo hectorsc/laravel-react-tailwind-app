@@ -25,7 +25,7 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return new CategoryResource($category);
+        return new CategoryResource($category->load('products'));
     }
 
     public function update(CategoryRequest $request, Category $category)

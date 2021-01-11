@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import CategoryForm from './CategoryForm';
 import { create } from '../../api/crudActions';
 
-
 class CategoryCreate extends React.Component {
 
    onSubmit = async formValues => {
@@ -11,7 +10,6 @@ class CategoryCreate extends React.Component {
    }
 
    render() {
-
       return (
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <h1 className="mb-2 font-bold text-2xl">

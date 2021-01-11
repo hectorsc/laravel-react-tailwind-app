@@ -77412,10 +77412,14 @@ var ProductCreate = /*#__PURE__*/function (_React$Component) {
         onSubmit: this.onSubmit,
         categories: categories
       }))), categories.length == 0 && categoryEmpty && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "ui negative message"
+        className: "my-5 p-4 bg-red-50 bg-opacity-75 border border-red-300 rounded"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "header"
-      }, "ATENCI\xD3N! NO EXISTEN CATEGOR\xCDAS."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Para poder crear un producto tiene que crear primero una categor\xEDa.")));
+        className: "text-red-600"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+        className: "font-bold "
+      }, "\xA1ATENCI\xD3N! NO EXISTEN CATEGOR\xCDAS."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        className: "font-medium"
+      }, "Para poder crear un producto tiene que crear primero una categor\xEDa."))));
     }
   }]);
 

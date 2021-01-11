@@ -41,16 +41,13 @@ class ProductCreate extends React.Component {
 
             {
                categories.length == 0 && categoryEmpty &&
-                  <div className="ui negative message">
-                     <div className="header">
-                        ATENCIÓN! NO EXISTEN CATEGORÍAS.
-                     </div>
-                     <p>Para poder crear un producto tiene que crear primero una categoría.</p>
+                  <div className="my-5 p-4 bg-red-50 bg-opacity-75 border border-red-300 rounded">
+                     <div className="text-red-600">
+                        <h2 className="font-bold ">¡ATENCIÓN! NO EXISTEN CATEGORÍAS.</h2>
+                        <p className="font-medium">Para poder crear un producto tiene que crear primero una categoría.</p>
+                     </div>  
                   </div>
-            }
-
-
-            
+            } 
          </div>
       );
    }

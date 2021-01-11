@@ -51,9 +51,9 @@ class CategoryShow extends React.Component {
                   </div> 
                :
                   <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
-                     <div className="flex justify-between mb-4">
-                        <h1 className="font-bold text-2xl">{category.name} tiene los siguientes productos asociados</h1>
-                     </div>
+                     <h1 className="mb-4 font-bold text-2xl">
+                        {category.name} tiene los siguientes productos asociados
+                     </h1>
                      <DataTable 
                         data={this.fetchProductsOfCategory} 
                         columns={columnsProduct}

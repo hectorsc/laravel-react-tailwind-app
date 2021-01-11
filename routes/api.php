@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\CategoryCollection;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +23,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// REACT
+// REACT BACK
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('/category', CategoryController::class);
     Route::apiResource('/product', ProductController::class);
+});
+
+// REACT FRONT
+// como solamente es un endpoint no creamos controller
+Route::get('/getCategories', function () {
+    $categories = Category::all();
+    return response(new CategoryCollection($categories));   
 });

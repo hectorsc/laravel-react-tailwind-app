@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductCollection;
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,22 +19,24 @@ class ProductController extends Controller
         return new ProductCollection($products);  
     }
 
-   
-    public function store(Request $request)
+
+    public function store(ProductRequest $request)
     {
-        //
+        $request->user()->products()->create($request->all());
+        return response()->json(['message' => 'Created successfully'], 200); 
     }
 
     
     public function show(Product $product)
     {
-        //
+        return new ProductResource($product->load('category'));
     }
 
    
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        //
+        $product->update($request->except('category'));
+        return response()->json(['message' => 'Updated successfully'], 200);
     }
 
     public function destroy(Product $product)

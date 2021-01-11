@@ -5,6 +5,8 @@ import CategoryCreate from './components/category/CategoryCreate';
 import CategoryEdit from './components/category/CategoryEdit';
 import CategoryShow from './components/category/CategoryShow';
 import ProductList from './components/product/ProductList';
+import ProductCreate from './components/product/ProductCreate';
+import ProductEdit from './components/product/ProductEdit';
 
 import NotFound from './components/NotFound';
 
@@ -17,6 +19,8 @@ export const routes = [
    { path: '/category/:id', component: CategoryShow },
 
    { path: '/product', component: ProductList },
+   { path: '/product/new', component: ProductCreate},
+   { path: '/product/edit/:id', component: ProductEdit },
 
    { path: '*', component: NotFound }
 ];

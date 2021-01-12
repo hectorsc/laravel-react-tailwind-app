@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from "react-select";
 import history from '../../history';
 
 class ProductForm extends React.Component {
@@ -16,7 +17,13 @@ class ProductForm extends React.Component {
    //necesario para el editar
    componentDidUpdate(prevProps) {
       if (prevProps.initialValues !== this.props.initialValues) {
-         this.setState({fields: {...this.props.initialValues}, loading: false});
+         this.setState({
+            fields: { 
+               ...this.props.initialValues, 
+               category_id: this.props.categoryActive 
+            }, 
+            loading: false
+         });
       }
    }
    
@@ -31,6 +38,13 @@ class ProductForm extends React.Component {
       }));
    };
 
+   onInputChangeSelect = (event, action) => {
+      this.setState({
+         fields: {...this.state.fields, [action.name]: event},
+         errors: {...this.state.errors, [action.name]: ''}
+      });
+   };
+
    onFormSubmit = async event => {
       event.preventDefault();
       const response = await this.props.onSubmit(this.state.fields);
@@ -39,7 +53,7 @@ class ProductForm extends React.Component {
          return
       }
       history.push('/product');
-   }
+   };
 
    render() {
       const { errors, fields } = this.state;
@@ -153,16 +167,14 @@ class ProductForm extends React.Component {
                            </div>
 
                            <div className="col-span-6">
-                              <select name="category_id" value={fields.category_id} onChange={this.onInputChange}>
-                                 <option value="">Elige categoría</option>
-                                    {
-                                       this.props.categories.map(category => {
-                                          return (
-                                             <option key={category.id} value={category.id}>{category.name}</option>
-                                          )
-                                       })
-                                    }
-                              </select>
+                              <Select
+                                 name="category_id"
+                                 placeholder="Elige una categoría"
+                                 styles={errors.category_id && selectStyles}
+                                 value={fields.category_id}
+                                 onChange={this.onInputChangeSelect}
+                                 options={this.props.categories}
+                              />
                               {
                                  errors.category_id && (
                                     <div className="mt-2 inline-block border border-red-400 rounded p-1 px-2">
@@ -194,3 +206,18 @@ class ProductForm extends React.Component {
 };
 
 export default ProductForm;
+
+// Select validator style
+const selectStyles = {
+   control: styles => ({ 
+      ...styles, 
+      borderColor: '#f98080', 
+      '&:hover' : {
+         borderColor: '#f98080'
+      }, 
+   }),
+   placeholder: styles => ({
+      ...styles, 
+      color: 'rgba(224, 36, 36, var(--text-opacity))' 
+   }),
+};

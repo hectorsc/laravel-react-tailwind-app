@@ -18,7 +18,22 @@ class ProductEdit extends React.Component {
          return;
       }
       const categories = await fetchAllData('category');
-      this.setState({ product: product.data, categories: categories.data });
+      this.setState({ 
+         product: product.data, 
+         categories: this.fixedDataForSelect(categories.data),
+         categoryActive: {
+            value: product.data.category.id, 
+            label: product.data.category.name
+         }
+      });
+   }
+
+   fixedDataForSelect(category) {
+      let data = [];
+      category.map((item) => {
+         data = [ ...data, { value: item.id, label: item.name }];
+      })
+      return data;
    }
 
    onSubmit = async formValues => {
@@ -26,6 +41,7 @@ class ProductEdit extends React.Component {
    }
 
    render() {
+      const { product, categories, categoryActive } = this.state;
       return (
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <h1 className="mb-2 font-bold text-2xl">
@@ -38,12 +54,13 @@ class ProductEdit extends React.Component {
                <span className="text-indigo-400 font-medium">/</span> Editar
             </h1>
  
-            <div className="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div className="bg-white shadow-xl sm:rounded-lg">
                <div className="p-6 sm:px-10 bg-white">
                   <ProductForm 
                      onSubmit={this.onSubmit} 
-                     initialValues={this.state.product}
-                     categories={this.state.categories}
+                     initialValues={product}
+                     categories={categories}
+                     categoryActive={categoryActive}
                   />
                </div>
             </div>

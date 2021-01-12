@@ -13,7 +13,16 @@ class ProductCreate extends React.Component {
 
    async componentDidMount () {
       const response = await fetchAllData('category');
-      this.setState({ categories: response.data, categoryEmpty: true }); 
+      const categories = this.fixedDataForSelect(response.data);
+      this.setState({ categories, categoryEmpty: true }); 
+   }
+
+   fixedDataForSelect(categories) {
+      let data = [];
+      categories.map((tag) => {
+         data = [ ...data, { value: tag.id, label: tag.name }];
+      })
+      return data;
    }
 
    render() {
@@ -30,7 +39,7 @@ class ProductCreate extends React.Component {
                <span className="text-indigo-400 font-medium">/</span> Crear
             </h1>
  
-            <div className="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div className="bg-white shadow-xl sm:rounded-lg">
                <div className="p-6 sm:px-10 bg-white">
                   <ProductForm 
                      onSubmit={this.onSubmit}

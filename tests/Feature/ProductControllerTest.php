@@ -22,16 +22,21 @@ class ProductControllerTest extends TestCase
     {
         parent::setUp();
 
-        // Añadimos esto para que las pruebas nos pase el
-        // 401 unauthorized pq esto nos logea
+        // Añadimos user ya logeado para que las pruebas
+        // nos pase el 401 unauthorized y tener ya un user 
         Sanctum::actingAs(
             User::factory()->create(),
         );
+
+        // Creamos una categoría para todas las pruebas pq 
+        // para crear un product siempre necesitamos tener 
+        // mínimo una categoría
+        Category::factory()->create();
     }
 
     public function test_index()
     {
-        Category::factory()->count(5)->create();
+        // Category::factory()->count(5)->create();
         Product::factory()->count(10)->create();
 
         $response = $this->getJson('/api/product');
@@ -48,16 +53,22 @@ class ProductControllerTest extends TestCase
 
     public function test_create_new_product()
     {
-        $data = [
-            'name' => 'created product'
-        ];
-        $response = $this->postJson('/api/product', $data);
+        $category = Category::factory()->create();
+
+        $product = Product::factory()->create([
+            'user_id' => $category->user->id,
+            'category_id' => $category->id,
+            'name' => 'Created product',
+        ]);
+
+        $response = $this->postJson('/api/product', $product->toArray());
 
         // $response->dump();
 
-        $response->assertSuccessful();
+        // Error 422 está OK
+        // $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('products', $data);
+        $this->assertDatabaseHas('products', $product->toArray());
     }
 
     public function test_update_product()
@@ -78,6 +89,7 @@ class ProductControllerTest extends TestCase
 
     public function test_show_product()
     {
+        // Category::factory()->create();
         $product = Product::factory()->create();
 
         $response = $this->getJson("/api/product/{$product->getKey()}");

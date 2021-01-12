@@ -15,4 +15,13 @@ final Class MyLibrary {
       return false;
    }
 
+   public static function fixedMultiSelectArray(Array $data)
+   {
+      $items = [];
+      foreach ($data as $key => $item) {
+         $items[$key] = $item['value'];
+      }
+      return $items;
+   }
+
 }

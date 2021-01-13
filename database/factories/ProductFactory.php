@@ -31,7 +31,7 @@ class ProductFactory extends Factory
                 // necesitamos un category_id que haya creado el usuario user_id
                 return Category::query()->where('user_id', $userId)->inRandomOrder()->first()->id;
             },
-            'name' => $this->faker->word(),
+            'name' => $this->faker->word,
             'ref' => $this->faker->unique()->bothify('???-#####'),
             'price' => $this->faker->randomNumber(4, false),
             'offer_price' => $this->faker->randomNumber(4, false)

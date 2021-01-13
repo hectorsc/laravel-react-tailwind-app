@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
-use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\CategoryCollection;
@@ -27,6 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('/category', CategoryController::class);
     Route::apiResource('/product', ProductController::class);
+    Route::apiResource('/tag', TagController::class);
 });
 
 // REACT FRONT

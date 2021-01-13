@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Post;
+use App\Models\Tag;
 
 class PostSeeder extends Seeder
 {
@@ -13,7 +15,8 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        //DE MOMENTO NO ME HACE FALTA PORQUE SE
-        // GENERAN CON EL TagSeeder
+        Post::factory(10)
+            ->has(Tag::factory()->count(2))
+            ->create(); 
     }
 }

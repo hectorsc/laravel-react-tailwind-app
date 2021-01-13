@@ -3,9 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Tag;
@@ -47,44 +45,37 @@ class TagControllerTest extends TestCase
         $response->assertJsonCount(10, 'data');
     }
 
-    public function test_create_new_product()
+    public function test_create_new_tag()
     {
-        $category = Category::factory()->create();
+        $tag = Tag::factory()->create();
 
-        $product = Product::factory()->create([
-            'user_id' => $category->user->id,
-            'category_id' => $category->id,
-            'name' => 'Created product',
-        ]);
-
-        $response = $this->postJson('/api/tag', $product->toArray());
+        $response = $this->postJson('/api/tag', $tag->toArray());
 
         // $response->dump();
 
         // Error 422 está OK
         // $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('tags', $product->toArray());
+        $this->assertDatabaseHas('tags', $tag->toArray());
     }
 
-    public function test_update_product()
+    public function test_update_tag()
     {
-        $product = Product::factory()->create();
-        $product->update([
+        $tag = Tag::factory()->create();
+        $tag->update([
             'name' => 'Updated tag'
         ]);
 
-        $response = $this->patchJson("/api/tag/{$product->getKey()}", $product->toArray());
+        $response = $this->patchJson("/api/tag/{$tag->getKey()}", $tag->toArray());
 
         // $response->dump();
         // $response->assertSuccessful(); //error 500 por el TagRequest
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('tags', $product->toArray());
+        $this->assertDatabaseHas('tags', $tag->toArray());
     }
 
-    public function test_show_product()
+    public function test_show_tag()
     {
-        // Category::factory()->create();
         $tag = Tag::factory()->create();
 
         $response = $this->getJson("/api/tag/{$tag->getKey()}");
@@ -92,7 +83,7 @@ class TagControllerTest extends TestCase
         $response->assertHeader('content-type', 'application/json');
     }
 
-    public function test_delete_product()
+    public function test_delete_tag()
     {
         $tag = Tag::factory()->create();
 

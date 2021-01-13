@@ -6,7 +6,9 @@ export const columns = [
 
 // POST LIST
 export const columnsPost = [
-   {name: 'título', selector: 'title'}
+   {name: 'título', selector: 'title'},
+   {name: 'subtítulo', selector: 'sub_title'},
+   {name: 'estado', selector: 'state'},  
 ];
 
 //PRODUCT LIST

@@ -11,13 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
-    
     public function index()
     {
         $products = Product::where('user_id', Auth::id())->get();
         return new ProductCollection($products);  
     }
-
 
     public function store(ProductRequest $request)
     {
@@ -25,14 +23,12 @@ class ProductController extends Controller
         $request->user()->products()->create($request->all());
         return response()->json(['message' => 'Created successfully'], 200); 
     }
-
-    
+ 
     public function show(Product $product)
     {
         return new ProductResource($product->load('category'));
     }
 
-   
     public function update(ProductRequest $request, Product $product)
     {
         $request->merge(['category_id' => $request->category_id['value']]);

@@ -15,6 +15,8 @@ import TagCreate from './components/tag/TagCreate';
 import TagEdit from './components/tag/TagEdit';
 import TagShow from './components/tag/TagShow';
 
+import PostList from "./components/post/PostList";
+
 import NotFound from './components/NotFound';
 
 export const routes = [
@@ -35,7 +37,7 @@ export const routes = [
    { path: '/tag/edit/:id', component: TagEdit },
    { path: '/tag/:id', component: TagShow },
 
-
+   { path: '/post', component: PostList },
 
    { path: '*', component: NotFound }
 ];

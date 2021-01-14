@@ -11,7 +11,7 @@ class Home extends React.Component {
    
    render() {
       return (
-         <div>
+         <div className="bg-indigo-500 p-1 py-1 text-center">
             <p>Soy un componente Home de React</p>  
          </div>
       ); 

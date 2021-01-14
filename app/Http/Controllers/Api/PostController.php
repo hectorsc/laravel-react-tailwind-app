@@ -9,6 +9,7 @@ use App\Http\Resources\PostCollection;
 use App\Http\Resources\PostResource;
 use App\MyLibrary;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -21,6 +22,8 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $tags = MyLibrary::fixedMultiSelectArray($request->tags);
+        $slug = Str::of($request->title)->slug('-');
+        $request->merge(['slug' => $slug]);
         $request->user()->posts()->create($request->except('tags'))->tags()->attach($tags);
         return response()->json(['message' => 'Created successfully'], 200);
     }
@@ -33,6 +36,9 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $tags = MyLibrary::fixedMultiSelectArray($request->tags);
+        $slug = Str::of($request->title)->slug('-');
+        $request->merge(['slug' => $slug]);
+        
         $post->update($request->except('tags'));
         $post->tags()->sync($tags);
         return response()->json(['message' => 'Updated successfully'], 200);   

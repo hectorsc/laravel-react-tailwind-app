@@ -15,7 +15,10 @@ import TagCreate from './components/tag/TagCreate';
 import TagEdit from './components/tag/TagEdit';
 import TagShow from './components/tag/TagShow';
 
-import PostList from "./components/post/PostList";
+import PostList from './components/post/PostList';
+import PostCreate from './components/post/PostCreate';
+import PostEdit from './components/post/PostEdit';
+import PostShow from './components/post/PostShow';
 
 import NotFound from './components/NotFound';
 
@@ -38,6 +41,9 @@ export const routes = [
    { path: '/tag/:id', component: TagShow },
 
    { path: '/post', component: PostList },
+   { path: '/post/new', component: PostCreate},
+   { path: '/post/edit/:id', component: PostEdit },
+   { path: '/post/:id', component: PostShow },
 
    { path: '*', component: NotFound }
 ];

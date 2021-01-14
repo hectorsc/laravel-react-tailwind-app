@@ -40,6 +40,7 @@ class PostController extends Controller
     
     public function destroy(Post $post)
     {
+        $post->tags()->detach();
         $post->delete();
         return response()->json(['message' => 'Deleted successfully'], 200);
     }

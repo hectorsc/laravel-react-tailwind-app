@@ -16,7 +16,13 @@ class PostSeeder extends Seeder
     public function run()
     {
         Post::factory(10)
-            ->has(Tag::factory()->count(2))
-            ->create(); 
+            ->has(
+                Tag::factory()
+                    ->count(2)
+                    ->state(function (array $attributes, Post $post) {
+                        return ['user_id' => $post->user_id];
+                    })
+            )
+            ->create();
     }
 }

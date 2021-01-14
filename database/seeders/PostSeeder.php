@@ -15,7 +15,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        Post::factory(10)
+        Post::factory(15)
             ->has(
                 Tag::factory()
                     ->count(2)

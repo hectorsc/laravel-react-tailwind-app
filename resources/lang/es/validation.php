@@ -151,7 +151,11 @@ return [
         'ref'  => 'referencia',
         'price' => 'precio',
         'offer_price' => 'precio en oferta',
-        'category_id' => 'elige categoría',
+        'category_id' => 'categoría',
+        'title' => 'título',
+        'sub_title' => 'subtítulo',
+        'body' => 'contenido',
+        'tags' => 'etiquetas',
     ],
 
 ];

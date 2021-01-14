@@ -64,7 +64,7 @@ class PostControllerTest extends TestCase
     {
         $post = Post::factory()->create();
         $post->update([
-            'name' => 'Updated post'
+            'title' => 'Updated post'
         ]);
 
         $response = $this->patchJson("/api/post/{$post->getKey()}", $post->toArray());
@@ -79,7 +79,7 @@ class PostControllerTest extends TestCase
     {
         $post = Post::factory()->create();
 
-        $response = $this->getJson("/api/product/{$post->getKey()}");
+        $response = $this->getJson("/api/post/{$post->getKey()}");
         $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
     }
@@ -88,7 +88,7 @@ class PostControllerTest extends TestCase
     {
         $post = Post::factory()->create();
 
-        $response = $this->deleteJson("/api/product/{$post->getKey()}");
+        $response = $this->deleteJson("/api/post/{$post->getKey()}");
         $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
 

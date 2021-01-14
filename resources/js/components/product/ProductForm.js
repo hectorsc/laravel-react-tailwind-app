@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from "react-select";
 import history from '../../history';
+import { selectStyles } from '../../selectStyles';
 
 class ProductForm extends React.Component {
 
@@ -206,18 +207,3 @@ class ProductForm extends React.Component {
 };
 
 export default ProductForm;
-
-// Select validator style
-const selectStyles = {
-   control: styles => ({ 
-      ...styles, 
-      borderColor: '#f98080', 
-      '&:hover' : {
-         borderColor: '#f98080'
-      }, 
-   }),
-   placeholder: styles => ({
-      ...styles, 
-      color: 'rgba(224, 36, 36, var(--text-opacity))' 
-   }),
-};

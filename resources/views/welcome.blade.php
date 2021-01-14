@@ -19,7 +19,7 @@
                 font-family: 'Nunito';
             }
         </style>
-
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>

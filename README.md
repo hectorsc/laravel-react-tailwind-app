@@ -4,7 +4,7 @@
 
 Aplicación Laravel 8 + Jetstream + Livewire + Tailwind CSS + React
 
-- Login y Registro con jetstream + Livewire.
+- Login y Registro con jetstream + Livewire y Sanctum
 - Multiusuario.
 - CRUD de categorías.
 - CRUD de productos.

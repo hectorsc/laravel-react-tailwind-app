@@ -26,11 +26,13 @@ class ProductController extends Controller
  
     public function show(Product $product)
     {
+        $this->authorize('view', $product);
         return new ProductResource($product->load('category'));
     }
 
     public function update(ProductRequest $request, Product $product)
     {
+        $this->authorize('update', $product);
         $request->merge(['category_id' => $request->category_id['value']]);
         $product->update($request->except('category'));
         return response()->json(['message' => 'Updated successfully'], 200);
@@ -38,6 +40,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
+        $this->authorize('delete', $product);
         $product->delete();
         return response()->json(['message' => 'Deleted successfully'], 200);
     }

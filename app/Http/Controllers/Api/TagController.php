@@ -25,11 +25,13 @@ class TagController extends Controller
 
     public function show(Tag $tag)
     {
+        $this->authorize('view', $tag);
         return new TagResource($tag->load('posts'));
     }
 
     public function update(TagRequest $request, Tag $tag)
     {
+        $this->authorize('update', $tag);
         $tag->update($request->except('posts'));
         return response()->json(['message' => 'Updated successfully'], 200);
 
@@ -37,6 +39,7 @@ class TagController extends Controller
 
     public function destroy(Tag $tag)
     {
+        $this->authorize('delete', $tag);
         $tag->delete();
         return response()->json(['message' => 'Deleted successfully'], 200);
     }

@@ -30,11 +30,13 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $this->authorize('view', $post);
         return new PostResource($post->load('tags'));
     }
 
     public function update(PostRequest $request, Post $post)
     {
+        $this->authorize('update', $post);
         $tags = MyLibrary::fixedMultiSelectArray($request->tags);
         $slug = Str::of($request->title)->slug('-');
         $request->merge(['slug' => $slug]);
@@ -46,6 +48,7 @@ class PostController extends Controller
     
     public function destroy(Post $post)
     {
+        $this->authorize('delete', $post);
         $post->tags()->detach();
         $post->delete();
         return response()->json(['message' => 'Deleted successfully'], 200);

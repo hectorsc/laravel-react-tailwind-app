@@ -86381,8 +86381,17 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
               case 3:
                 response = _context.sent;
 
-                if (!response.errors) {
+                if (!response.exception) {
                   _context.next = 7;
+                  break;
+                }
+
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push("/page-403");
+                return _context.abrupt("return");
+
+              case 7:
+                if (!response.errors) {
+                  _context.next = 10;
                   break;
                 }
 
@@ -86392,10 +86401,10 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
 
                 return _context.abrupt("return");
 
-              case 7:
+              case 10:
                 _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/category');
 
-              case 8:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -88067,8 +88076,17 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
               case 3:
                 response = _context.sent;
 
-                if (!response.errors) {
+                if (!response.exception) {
                   _context.next = 7;
+                  break;
+                }
+
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push("/page-403");
+                return _context.abrupt("return");
+
+              case 7:
+                if (!response.errors) {
+                  _context.next = 10;
                   break;
                 }
 
@@ -88078,10 +88096,10 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
 
                 return _context.abrupt("return");
 
-              case 7:
+              case 10:
                 _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/post');
 
-              case 8:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -89025,8 +89043,17 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
               case 3:
                 response = _context.sent;
 
-                if (!response.errors) {
+                if (!response.exception) {
                   _context.next = 7;
+                  break;
+                }
+
+                _history__WEBPACK_IMPORTED_MODULE_3__["default"].push("/page-403");
+                return _context.abrupt("return");
+
+              case 7:
+                if (!response.errors) {
+                  _context.next = 10;
                   break;
                 }
 
@@ -89036,10 +89063,10 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
 
                 return _context.abrupt("return");
 
-              case 7:
+              case 10:
                 _history__WEBPACK_IMPORTED_MODULE_3__["default"].push('/product');
 
-              case 8:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -89863,8 +89890,17 @@ var TagForm = /*#__PURE__*/function (_React$Component) {
               case 3:
                 response = _context.sent;
 
-                if (!response.errors) {
+                if (!response.exception) {
                   _context.next = 7;
+                  break;
+                }
+
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push("/page-403");
+                return _context.abrupt("return");
+
+              case 7:
+                if (!response.errors) {
+                  _context.next = 10;
                   break;
                 }
 
@@ -89874,10 +89910,10 @@ var TagForm = /*#__PURE__*/function (_React$Component) {
 
                 return _context.abrupt("return");
 
-              case 7:
+              case 10:
                 _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/tag');
 
-              case 8:
+              case 11:
               case "end":
                 return _context.stop();
             }

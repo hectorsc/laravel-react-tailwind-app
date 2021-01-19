@@ -34,6 +34,10 @@ class CategoryForm extends React.Component {
    onFormSubmit = async event => {
       event.preventDefault();
       const response = await this.props.onSubmit(this.state.fields);
+      if (response.exception) {
+         history.push("/page-403");
+         return;
+      }
       if (response.errors) {
          this.setState({ errors: response.errors})
          return

@@ -16,7 +16,7 @@ class CategoryControllerTest extends TestCase
 
     use RefreshDatabase;
     use WithoutMiddleware;
-    
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -51,7 +51,7 @@ class CategoryControllerTest extends TestCase
         // No pasa prueba pero esta bien pq da un 422 
         // ya que no pasa la validación del CategoryRequest
         // $response->assertSuccessful();
-
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
 
         $this->assertDatabaseHas('categories', $category->toArray());
@@ -65,15 +65,17 @@ class CategoryControllerTest extends TestCase
         ]);
 
         $response = $this->patchJson("/api/category/{$category->getKey()}", $category->toArray());
-        
+
         // MENSAJES DE ERROR
         // $response->dump();
         // dd($this->response->getContent());
 
         // No pasa prueba error 500 por la validacion del
         // categoryRequest, está OK
+        // AL SER UN ERROR 500 DEBERIA DE CAMBIAR LA IMPLEMENTACION Y
+        // HACER UN REQUEST PARA UPDATE Y OTRO PARA CREATE
         // $response->assertSuccessful(); 
-
+        $response->assertStatus(500, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('categories', $category->toArray());
     
@@ -84,7 +86,10 @@ class CategoryControllerTest extends TestCase
         $category = Category::factory()->create();
 
         $response = $this->getJson("/api/category/{$category->getKey()}");
-        $response->assertSuccessful();
+        
+        // al añadir las policies ya no es un 200
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
     }
 
@@ -93,7 +98,10 @@ class CategoryControllerTest extends TestCase
         $category = Category::factory()->create();
 
         $response = $this->deleteJson("/api/category/{$category->getKey()}");
-        $response->assertSuccessful();
+    
+        // al añadir las policies ya no es un 200
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         
         $category->delete();

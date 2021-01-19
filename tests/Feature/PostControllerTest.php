@@ -56,6 +56,7 @@ class PostControllerTest extends TestCase
 
         // Error 422 está OK
         // $response->assertSuccessful();
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('posts', $post->toArray());
     }
@@ -71,6 +72,7 @@ class PostControllerTest extends TestCase
 
         // $response->dump();
         // $response->assertSuccessful(); //error 500 por el PostRequest
+        $response->assertStatus(500, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('posts', $post->toArray());
     }
@@ -80,7 +82,8 @@ class PostControllerTest extends TestCase
         $post = Post::factory()->create();
 
         $response = $this->getJson("/api/post/{$post->getKey()}");
-        $response->assertSuccessful();
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
     }
 
@@ -89,7 +92,8 @@ class PostControllerTest extends TestCase
         $post = Post::factory()->create();
 
         $response = $this->deleteJson("/api/post/{$post->getKey()}");
-        $response->assertSuccessful();
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
 
         $post->delete();

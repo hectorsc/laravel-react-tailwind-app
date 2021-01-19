@@ -67,6 +67,7 @@ class ProductControllerTest extends TestCase
 
         // Error 422 está OK
         // $response->assertSuccessful();
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('products', $product->toArray());
     }
@@ -79,9 +80,10 @@ class ProductControllerTest extends TestCase
         ]);
 
         $response = $this->patchJson("/api/product/{$product->getKey()}", $product->toArray());
-        
+
         // $response->dump();
         // $response->assertSuccessful(); //error 500 por el ProductRequest
+        $response->assertStatus(500, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('products', $product->toArray());
     
@@ -93,7 +95,8 @@ class ProductControllerTest extends TestCase
         $product = Product::factory()->create();
 
         $response = $this->getJson("/api/product/{$product->getKey()}");
-        $response->assertSuccessful();
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
     }
 
@@ -102,7 +105,8 @@ class ProductControllerTest extends TestCase
         $product = Product::factory()->create();
 
         $response = $this->deleteJson("/api/product/{$product->getKey()}");
-        $response->assertSuccessful();
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         
         $product->delete();

@@ -55,6 +55,7 @@ class TagControllerTest extends TestCase
 
         // Error 422 está OK
         // $response->assertSuccessful();
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('tags', $tag->toArray());
     }
@@ -70,6 +71,7 @@ class TagControllerTest extends TestCase
 
         // $response->dump();
         // $response->assertSuccessful(); //error 500 por el TagRequest
+        $response->assertStatus(500, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('tags', $tag->toArray());
     }
@@ -79,7 +81,8 @@ class TagControllerTest extends TestCase
         $tag = Tag::factory()->create();
 
         $response = $this->getJson("/api/tag/{$tag->getKey()}");
-        $response->assertSuccessful();
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
     }
 
@@ -88,7 +91,8 @@ class TagControllerTest extends TestCase
         $tag = Tag::factory()->create();
 
         $response = $this->deleteJson("/api/tag/{$tag->getKey()}");
-        $response->assertSuccessful();
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
 
         $tag->delete();

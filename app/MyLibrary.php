@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Http\Request;
 
+// clase que no puede ser extendida.
+// no va a tener nunca un extends
 final Class MyLibrary {
 
    public static function routeHaveMiddlewareAuth(Request $request)

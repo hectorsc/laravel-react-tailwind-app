@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Héctor',
             'email' => 'hscapel@test.com',
-            'password' => Hash::make('12345678')
+            'password' => Hash::make('12345678'),
+            'is_admin' => true
         ]);
 
         // Generamos dos users de pruebas

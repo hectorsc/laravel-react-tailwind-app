@@ -38,7 +38,7 @@ class PostRequest extends FormRequest
         ];
 
         if ($this->post) {
-            if ($this->post->title == $request->title) {
+            if (isset($this->post->title) && $this->post->title == $request->title) {
                 $rules = [
                     'title' => 'required|min:4|max:150',
                     'sub_title' => 'required|min:4|max:150',

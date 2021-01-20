@@ -35,7 +35,7 @@ class TagRequest extends FormRequest
         ];
 
         if ($this->tag) {
-            if ($this->tag->name == $request->name) {
+            if (isset($this->tag->name) && $this->tag->name == $request->name) {
                 $rules = ['name' => 'required|min:4|max:20'];
             }
         }

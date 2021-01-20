@@ -35,7 +35,7 @@ class CategoryRequest extends FormRequest
         ];
 
         if ($this->category) {
-            if ($this->category->name == $request->name) {
+            if (isset($this->category->name) && $this->category->name == $request->name) {
                 $rules = ['name' => 'required|min:4|max:20'];
             }
         }

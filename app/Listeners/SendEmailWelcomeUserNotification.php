@@ -8,7 +8,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Mail\WelcomeEmail;
 use Illuminate\Support\Facades\Mail;
 
-class SendEmailWelcomeUserNotification
+class SendEmailWelcomeUserNotification implements ShouldQueue
 {
     public function __construct()
     {

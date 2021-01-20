@@ -70,8 +70,8 @@ class TagControllerTest extends TestCase
         $response = $this->patchJson("/api/tag/{$tag->getKey()}", $tag->toArray());
 
         // $response->dump();
-        // $response->assertSuccessful(); //error 500 por el TagRequest
-        $response->assertStatus(500, "Response is: {$response->getContent()}");
+        // $response->assertSuccessful(); //error 422 por el TagRequest
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('tags', $tag->toArray());
     }

@@ -70,12 +70,10 @@ class CategoryControllerTest extends TestCase
         // $response->dump();
         // dd($this->response->getContent());
 
-        // No pasa prueba error 500 por la validacion del
+        // No pasa prueba error 422 por la validacion del
         // categoryRequest, está OK
-        // AL SER UN ERROR 500 DEBERIA DE CAMBIAR LA IMPLEMENTACION Y
-        // HACER UN REQUEST PARA UPDATE Y OTRO PARA CREATE
         // $response->assertSuccessful(); 
-        $response->assertStatus(500, "Response is: {$response->getContent()}");
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('categories', $category->toArray());
     

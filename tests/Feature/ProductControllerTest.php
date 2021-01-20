@@ -82,8 +82,8 @@ class ProductControllerTest extends TestCase
         $response = $this->patchJson("/api/product/{$product->getKey()}", $product->toArray());
 
         // $response->dump();
-        // $response->assertSuccessful(); //error 500 por el ProductRequest
-        $response->assertStatus(500, "Response is: {$response->getContent()}");
+        // $response->assertSuccessful(); //error 422 por el ProductRequest
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('products', $product->toArray());
     

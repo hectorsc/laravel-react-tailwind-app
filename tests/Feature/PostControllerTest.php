@@ -71,8 +71,8 @@ class PostControllerTest extends TestCase
         $response = $this->patchJson("/api/post/{$post->getKey()}", $post->toArray());
 
         // $response->dump();
-        // $response->assertSuccessful(); //error 500 por el PostRequest
-        $response->assertStatus(500, "Response is: {$response->getContent()}");
+        // $response->assertSuccessful(); //error 422 por el PostRequest
+        $response->assertStatus(422, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('posts', $post->toArray());
     }

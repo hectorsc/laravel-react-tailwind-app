@@ -36,7 +36,7 @@ class CreateNewUser implements CreatesNewUsers
         // cuando no tenemos que confirmar cuenta
         // LO OPTIMO ES HACER ESTO EN EL EVENTSERVICEPROVIDER
         // CREANDO UN LISTENER EN EL EVENTO REGISTERED
-        dispatch(new SendWelcomeEmail($user->email));
+        // dispatch(new SendWelcomeEmail($user->email));
 
         return $user;
     }

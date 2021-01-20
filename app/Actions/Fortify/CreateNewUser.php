@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Jobs\SendWelcomeEmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -25,10 +26,18 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+
+        // disparamos job después de hacer registro.
+        // cuando no tenemos que confirmar cuenta
+        // LO OPTIMO ES HACER ESTO EN EL EVENTSERVICEPROVIDER
+        // CREANDO UN LISTENER EN EL EVENTO REGISTERED
+        dispatch(new SendWelcomeEmail($user->email));
+
+        return $user;
     }
 }

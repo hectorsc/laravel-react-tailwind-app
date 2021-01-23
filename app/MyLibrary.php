@@ -8,21 +8,25 @@ use Illuminate\Http\Request;
 // no va a tener nunca un extends
 final Class MyLibrary {
 
-   public static function routeHaveMiddlewareAuth(Request $request)
+   public static function routeHaveMiddlewareAuth(Request $request): bool
    {
       $middlewares = $request->route()->getAction();
-      foreach ($middlewares['middleware'] as $middleware) {
+      foreach ($middlewares['middleware'] as $middleware) 
+      {
          if ($middleware === 'auth:sanctum') return true;
       }
+
       return false;
    }
 
-   public static function fixedMultiSelectArray(Array $data)
+   public static function fixedMultiSelectArray(Array $data): array
    {
       $items = [];
-      foreach ($data as $key => $item) {
+      foreach ($data as $key => $item) 
+      {
          $items[$key] = $item['value'];
       }
+
       return $items;
    }
 

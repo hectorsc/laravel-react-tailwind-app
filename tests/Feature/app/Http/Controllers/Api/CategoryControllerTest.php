@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\app\Http\Controllers\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -40,43 +40,47 @@ class CategoryControllerTest extends TestCase
 
     public function test_create_new_category()
     {
-        $category = Category::factory()->create();
+        // no debo pasar un factory pq ya me da uno creado
+        // y yo lo estoy creando para hacer el test
+        // $category = Category::factory()->create([
+        //     'name' => 'create category'
+        // ]); 
+        $category = [
+            'name' => 'Create category'
+        ];
         
-        $response = $this->postJson('/api/category', $category->toArray());
+        $response = $this->postJson('/api/category', $category);
         
         // MENSAJES DE ERROR
         // $response->dump();
         // dd($this->response->getContent());
 
-        // No pasa prueba pero esta bien pq da un 422 
-        // ya que no pasa la validación del CategoryRequest
-        // $response->assertSuccessful();
-        $response->assertStatus(422, "Response is: {$response->getContent()}");
+        $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
 
-        $this->assertDatabaseHas('categories', $category->toArray());
+        $this->assertDatabaseHas('categories', $category);
     }
 
     public function test_update_category()
     {
         $category = Category::factory()->create();
-        $category->update([
-            'name' => 'Updated category'
-        ]);
+        $data = [
+            'name' => 'Update category'
+        ];
 
-        $response = $this->patchJson("/api/category/{$category->getKey()}", $category->toArray());
+        $response = $this->patchJson("/api/category/{$category->getKey()}", $data);
 
         // MENSAJES DE ERROR
         // $response->dump();
         // dd($this->response->getContent());
 
-        // No pasa prueba error 422 por la validacion del
-        // categoryRequest, está OK
+        // Al añadir policies ya no es 200
         // $response->assertSuccessful(); 
-        $response->assertStatus(422, "Response is: {$response->getContent()}");
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('categories', $category->toArray());
-    
+        // no es necesario comprobar que hay algo en la bbdd
+        // estamos editando, por tanto ya hay valor en bbddd
+        // $this->assertDatabaseHas('categories', $category->toArray());
     }
 
     public function test_show_category()

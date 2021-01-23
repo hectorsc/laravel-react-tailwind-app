@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\app\Http\Controllers\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -55,43 +55,46 @@ class ProductControllerTest extends TestCase
     {
         $category = Category::factory()->create();
 
-        $product = Product::factory()->create([
-            'user_id' => $category->user->id,
-            'category_id' => $category->id,
-            'name' => 'Created product',
-        ]);
+        $product = [
+            'name' => 'Create product',
+            'ref' => 'qwr-234',
+            'price' => 10,
+            'offer_price' => 5,
+            'category_id' => ['value' => $category->id ]
+        ];
 
-        $response = $this->postJson('/api/product', $product->toArray());
+        $response = $this->postJson('/api/product', $product);
 
         // $response->dump();
 
-        // Error 422 está OK
-        // $response->assertSuccessful();
-        $response->assertStatus(422, "Response is: {$response->getContent()}");
+        $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('products', $product->toArray());
+        $this->assertDatabaseHas('products', $product);
     }
 
     public function test_update_product()
     {
+        $category = Category::factory()->create();
         $product = Product::factory()->create();
-        $product->update([
-            'name' => 'Updated product'
-        ]);
 
-        $response = $this->patchJson("/api/product/{$product->getKey()}", $product->toArray());
+        $data = [
+            'name' => 'Update product',
+            'ref' => 'qwr-234',
+            'price' => 10,
+            'offer_price' => 5,
+            'category_id' => ['value' => $category->id]
+        ];
+
+        $response = $this->patchJson("/api/product/{$product->getKey()}", $data);
 
         // $response->dump();
-        // $response->assertSuccessful(); //error 422 por el ProductRequest
-        $response->assertStatus(422, "Response is: {$response->getContent()}");
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('products', $product->toArray());
-    
     }
 
     public function test_show_product()
     {
-        // Category::factory()->create();
         $product = Product::factory()->create();
 
         $response = $this->getJson("/api/product/{$product->getKey()}");

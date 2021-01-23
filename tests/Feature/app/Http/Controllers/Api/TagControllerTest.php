@@ -1,10 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\app\Http\Controllers\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use App\Models\Product;
 use App\Models\User;
 use App\Models\Tag;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -47,33 +46,32 @@ class TagControllerTest extends TestCase
 
     public function test_create_new_tag()
     {
-        $tag = Tag::factory()->create();
+        $tag = [
+            'name' => 'Create tag'
+        ];
 
-        $response = $this->postJson('/api/tag', $tag->toArray());
+        $response = $this->postJson('/api/tag', $tag);
 
         // $response->dump();
 
-        // Error 422 está OK
-        // $response->assertSuccessful();
-        $response->assertStatus(422, "Response is: {$response->getContent()}");
+        $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('tags', $tag->toArray());
+        $this->assertDatabaseHas('tags', $tag);
     }
 
     public function test_update_tag()
     {
         $tag = Tag::factory()->create();
-        $tag->update([
-            'name' => 'Updated tag'
-        ]);
+        $data = [
+            'name' => 'Update tag'
+        ];
 
-        $response = $this->patchJson("/api/tag/{$tag->getKey()}", $tag->toArray());
+        $response = $this->patchJson("/api/tag/{$tag->getKey()}", $data);
 
         // $response->dump();
-        // $response->assertSuccessful(); //error 422 por el TagRequest
-        $response->assertStatus(422, "Response is: {$response->getContent()}");
+        // $response->assertSuccessful();
+        $response->assertStatus(403, "Response is: {$response->getContent()}");
         $response->assertHeader('content-type', 'application/json');
-        $this->assertDatabaseHas('tags', $tag->toArray());
     }
 
     public function test_show_tag()

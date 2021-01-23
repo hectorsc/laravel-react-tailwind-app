@@ -13,12 +13,13 @@ class ProductPolicyTest extends TestCase
     use RefreshDatabase;
 
     private User $user;
+    private Category $category;
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->user = User::factory()->create();
-        Category::factory()->create();
+        $this->category = Category::factory()->create();
     }
     
     public function test_user_with_permit_can_access_product()
@@ -36,7 +37,8 @@ class ProductPolicyTest extends TestCase
         $userTwo = User::factory()->create();
 
         $product = Product::factory()->create([
-            'user_id' => $this->user->id
+            'user_id' => $this->user->id,
+            'category_id' => $this->category->id
         ]);
 
         $this->assertFalse($userTwo->can('view', $product));

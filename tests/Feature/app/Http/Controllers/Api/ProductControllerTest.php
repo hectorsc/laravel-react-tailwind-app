@@ -17,6 +17,8 @@ class ProductControllerTest extends TestCase
 
     use RefreshDatabase;
     use WithoutMiddleware;
+
+    private Category $category;
     
     protected function setUp(): void
     {
@@ -31,12 +33,11 @@ class ProductControllerTest extends TestCase
         // Creamos una categoría para todas las pruebas pq 
         // para crear un product siempre necesitamos tener 
         // mínimo una categoría
-        Category::factory()->create();
+        $this->category = Category::factory()->create();
     }
 
     public function test_index()
     {
-        // Category::factory()->count(5)->create();
         Product::factory()->count(10)->create();
 
         $response = $this->getJson('/api/product');
@@ -53,14 +54,12 @@ class ProductControllerTest extends TestCase
 
     public function test_create_new_product()
     {
-        $category = Category::factory()->create();
-
         $product = [
             'name' => 'Create product',
             'ref' => 'qwr-234',
             'price' => 10,
             'offer_price' => 5,
-            'category_id' => ['value' => $category->id ]
+            'category_id' => ['value' => $this->category->id ]
         ];
 
         $response = $this->postJson('/api/product', $product);
@@ -74,7 +73,6 @@ class ProductControllerTest extends TestCase
 
     public function test_update_product()
     {
-        $category = Category::factory()->create();
         $product = Product::factory()->create();
 
         $data = [
@@ -82,7 +80,7 @@ class ProductControllerTest extends TestCase
             'ref' => 'qwr-234',
             'price' => 10,
             'offer_price' => 5,
-            'category_id' => ['value' => $category->id]
+            'category_id' => ['value' => $this->category->id]
         ];
 
         $response = $this->patchJson("/api/product/{$product->getKey()}", $data);

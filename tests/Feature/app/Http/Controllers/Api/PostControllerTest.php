@@ -28,6 +28,12 @@ class PostControllerTest extends TestCase
         Sanctum::actingAs(
             User::factory()->create(),
         );
+        
+        // no me deja usar un tag para todas las pruebas
+        // peta la prueba de create_new_post
+        // Tag::factory()->create([
+        //     'name' => 'Tag example'
+        // ]);
     }
 
     public function test_index()

@@ -21,4 +21,9 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getPosts()
+    {
+        return $this::with('user', 'tags')->orderBy('created_at', 'ASC')->get();
+    }
+
 }

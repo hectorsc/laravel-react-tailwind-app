@@ -13,5 +13,5 @@ require('./bootstrap');
  */
 require("alpinejs");
 
-require('./components/Index');
+require('./components/backEnd/Index');
 require('./components/frontEnd/Index');

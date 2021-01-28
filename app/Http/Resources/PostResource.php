@@ -21,7 +21,8 @@ class PostResource extends JsonResource
             'sub_title' => (string) $this->sub_title,
             'body' => (string) $this->body,
             'active' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (bool) $this->active),
-            'tags' => TagResource::collection($this->whenLoaded('tags'))
+            'tags' => TagResource::collection($this->whenLoaded('tags')),
+            'user' => new UserResource($this->whenLoaded('user'))
         ];
     }
 }

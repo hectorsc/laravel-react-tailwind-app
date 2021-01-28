@@ -19,7 +19,8 @@ class TagResource extends JsonResource
             'id' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (int) $this->id),
             'name' => (string) $this->name,
             'active' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (bool) $this->active),
-            'posts' => PostResource::collection($this->whenLoaded('posts'))
+            'posts' => PostResource::collection($this->whenLoaded('posts')),
+            'user' => new UserResource($this->whenLoaded('user'))
         ];
     }
 }

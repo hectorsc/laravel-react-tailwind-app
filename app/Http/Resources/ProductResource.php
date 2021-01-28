@@ -23,7 +23,8 @@ class ProductResource extends JsonResource
             'price' => (int) $this->price,
             'offer_price' => (int) $this->offer_price,
             'active' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (boolean) $this->active),
-            'category' => new CategoryResource($this->whenLoaded('category'))
+            'category' => new CategoryResource($this->whenLoaded('category')),
+            'user' => new UserResource($this->whenLoaded('user'))
         ];
        
     }

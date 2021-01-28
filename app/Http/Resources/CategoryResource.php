@@ -13,7 +13,8 @@ class CategoryResource extends JsonResource
             'id' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (int) $this->id),
             'name' => (string) $this->name,
             'active' => $this->when(MyLibrary::routeHaveMiddlewareAuth($request), (boolean) $this->active),
-            'products' => ProductResource::collection($this->whenLoaded('products'))
+            'products' => ProductResource::collection($this->whenLoaded('products')),
+            'user' => new UserResource($this->whenLoaded('user'))
         ];
     }
 }

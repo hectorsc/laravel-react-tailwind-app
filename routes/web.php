@@ -22,4 +22,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 // REACT
-Route::view('/{path?}', 'dashboard')->where('path', '.*')->middleware('auth:sanctum');
+Route::get('/{path?}', function () {
+    $view = auth()->check() ? 'dashboard' : 'welcome';
+    return view($view);
+})->where('path', '.*');

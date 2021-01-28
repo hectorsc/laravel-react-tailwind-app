@@ -7,7 +7,13 @@ use App\Http\Controllers\Api\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\CategoryCollection;
+use App\Http\Resources\PostCollection;
+use App\Http\Resources\ProductCollection;
+use App\Http\Resources\TagCollection;
 use App\Models\Category;
+use App\Models\Post;
+use App\Models\Product;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +39,23 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 // REACT FRONT
-// como solamente es un endpoint no creamos controller
+// como solamente son endpoint no creamos controller
 Route::get('/getCategories', function () {
-    $categories = Category::all();
+    $categories = Category::with('user', 'products')->get();
     return response(new CategoryCollection($categories));   
+});
+
+Route::get('/getPosts', function () {
+    $posts = new Post();
+    return response(new PostCollection($posts->getPosts()));
+});
+
+Route::get('/getProducts', function () {
+    $products = Product::with('user', 'category')->get();
+    return response(new ProductCollection($products));
+});
+
+Route::get('/getTags', function () {
+    $tags = Tag::with('user', 'posts')->get();
+    return response(new TagCollection($tags));
 });

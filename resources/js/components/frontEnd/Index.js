@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Home';
+import App from './layouts/App';
 
 const Index = ()  => {
    return (
       <div>
-         <Home /> 
+         <App /> 
       </div>
    );
 }

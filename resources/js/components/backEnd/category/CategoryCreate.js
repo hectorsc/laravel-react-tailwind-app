@@ -14,7 +14,7 @@ class CategoryCreate extends React.Component {
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <h1 className="mb-2 font-bold text-2xl">
                <Link
-                  to='/category'
+                  to='/admin/category'
                   className="text-indigo-500 hover:text-indigo-600"
                >
                   Categorías

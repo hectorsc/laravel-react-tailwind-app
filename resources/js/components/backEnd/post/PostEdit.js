@@ -14,7 +14,7 @@ class PostEdit extends React.Component {
    componentDidMount = async () => {
       const post = await fetchData('post', this.props.match.params.id);
       if (post.exception) {
-         history.push('/page-404');
+         history.push('/admin/page-404');
          return;
       }
       const tags = await fetchAllData('tag');
@@ -43,7 +43,7 @@ class PostEdit extends React.Component {
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <h1 className="mb-2 font-bold text-2xl">
                <Link
-                  to='/post'
+                  to='/admin/post'
                   className="text-indigo-500 hover:text-indigo-600"
                >
                   Noticias

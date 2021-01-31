@@ -16,7 +16,7 @@ class ProductList extends React.Component {
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <div className="flex justify-between mb-4">
                <h1 className="font-bold text-2xl">Productos</h1>
-               <Link to='/product/new' className="btn-create">Crear producto</Link>
+               <Link to='/admin/product/new' className="btn-create">Crear producto</Link>
             </div>
             <DataTable 
                data={this.fetchProducts} 

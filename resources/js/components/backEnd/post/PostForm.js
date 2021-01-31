@@ -52,7 +52,7 @@ class PostForm extends React.Component {
       event.preventDefault();
       const response = await this.props.onSubmit(this.state.fields);
       if (response.exception) {
-         history.push("/page-403");
+         history.push('/admin/page-403');
          return;
       }
       if (response.errors) {
@@ -60,7 +60,7 @@ class PostForm extends React.Component {
          return
       }
       
-      history.push('/post');
+      history.push('/admin/post');
    };
 
    render() {

@@ -23,27 +23,27 @@ import PostShow from './post/PostShow';
 import NotFound from '../NotFound';
 
 export const routes = [
-   { path: '/dashboard', component: Home },
+   { path: '/admin/dashboard', component: Home },
 
-   { path: '/category', component: CategoryList },
-   { path: '/category/new', component: CategoryCreate},
-   { path: '/category/edit/:id', component: CategoryEdit },
-   { path: '/category/:id', component: CategoryShow },
+   { path: '/admin/category', component: CategoryList },
+   { path: '/admin/category/new', component: CategoryCreate},
+   { path: '/admin/category/edit/:id', component: CategoryEdit },
+   { path: '/admin/category/:id', component: CategoryShow },
 
-   { path: '/product', component: ProductList },
-   { path: '/product/new', component: ProductCreate},
-   { path: '/product/edit/:id', component: ProductEdit },
-   { path: '/product/:id', component: ProductShow },
+   { path: '/admin/product', component: ProductList },
+   { path: '/admin/product/new', component: ProductCreate},
+   { path: '/admin/product/edit/:id', component: ProductEdit },
+   { path: '/admin/product/:id', component: ProductShow },
 
-   { path: '/tag', component: TagList },
-   { path: '/tag/new', component: TagCreate},
-   { path: '/tag/edit/:id', component: TagEdit },
-   { path: '/tag/:id', component: TagShow },
+   { path: '/admin/tag', component: TagList },
+   { path: '/admin/tag/new', component: TagCreate},
+   { path: '/admin/tag/edit/:id', component: TagEdit },
+   { path: '/admin/tag/:id', component: TagShow },
 
-   { path: '/post', component: PostList },
-   { path: '/post/new', component: PostCreate},
-   { path: '/post/edit/:id', component: PostEdit },
-   { path: '/post/:id', component: PostShow },
+   { path: '/admin/post', component: PostList },
+   { path: '/admin/post/new', component: PostCreate},
+   { path: '/admin/post/edit/:id', component: PostEdit },
+   { path: '/admin/post/:id', component: PostShow },
 
    { path: '*', component: NotFound }
 ];

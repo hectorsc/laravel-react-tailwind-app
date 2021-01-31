@@ -16,7 +16,7 @@ class PostList extends React.Component {
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <div className="flex justify-between mb-4">
                <h1 className="font-bold text-2xl">Noticias</h1>
-               <Link to='/post/new' className="btn-create">Crear noticia</Link>
+               <Link to='/admin/post/new' className="btn-create">Crear noticia</Link>
             </div>
             <DataTable 
                data={this.fetchPosts} 

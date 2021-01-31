@@ -14,7 +14,7 @@ class TagEdit extends React.Component {
    componentDidMount = async () => {
       const response = await fetchData('tag', this.props.match.params.id);
       if (response.exception) {
-         history.push('/page-404');
+         history.push('/admin/page-404');
          return;
       }
       this.setState({ response: response.data });
@@ -29,7 +29,7 @@ class TagEdit extends React.Component {
          <div className="w-full mx-auto sm:px-6 lg:px-8 py-6">
             <h1 className="mb-2 font-bold text-2xl">
                <Link
-                  to='/tag'
+                  to='/admin/tag'
                   className="text-indigo-500 hover:text-indigo-600"
                >
                   Etiquetas

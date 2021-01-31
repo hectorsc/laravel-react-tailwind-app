@@ -15,7 +15,7 @@ const NavBarV2 = () => {
             <ul>
                <NavLink
                   activeClassName="bg-pink-700 "
-                  to="/dashboard"
+                  to="/admin/dashboard"
                   className="flex items-center px-4 py-3 border-b border-indigo-200 border-t border-opacity-25 hover:bg-pink-700"
                >
                   <div className="-mx-0.5">
@@ -28,7 +28,7 @@ const NavBarV2 = () => {
 
                <NavLink
                   activeClassName="bg-pink-700 "
-                  to="/category"
+                  to="/admin/category"
                   className="flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
                >
                   <div className="-mx-0.5">
@@ -41,7 +41,7 @@ const NavBarV2 = () => {
 
                <NavLink
                   activeClassName="bg-pink-700 "
-                  to="/product"
+                  to="/admin/product"
                   className="flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
                >
                   <div className="-mx-0.5">
@@ -54,7 +54,7 @@ const NavBarV2 = () => {
 
                <NavLink
                   activeClassName="bg-pink-700 "
-                  to="/tag"
+                  to="/admin/tag"
                   className="flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
                >
                   <div className="-mx-0.5">
@@ -67,7 +67,7 @@ const NavBarV2 = () => {
 
                <NavLink
                   activeClassName="bg-pink-700 "
-                  to="/post"
+                  to="/admin/post"
                   className="flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
                >
                   <div className="-mx-0.5">

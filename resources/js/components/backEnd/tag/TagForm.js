@@ -35,14 +35,14 @@ class TagForm extends React.Component {
       event.preventDefault();
       const response = await this.props.onSubmit(this.state.fields);
       if (response.exception) {
-         history.push("/page-403");
+         history.push('/admin/page-403');
          return;
       }
       if (response.errors) {
          this.setState({ errors: response.errors})
          return
       }
-      history.push('/tag');
+      history.push('/admin/tag');
    }
 
    render() {

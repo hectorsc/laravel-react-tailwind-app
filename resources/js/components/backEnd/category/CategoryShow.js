@@ -19,7 +19,7 @@ class CategoryShow extends React.Component {
    async componentDidMount() {
       const response = await this.fetchCategory();
       if (response.exception) {
-         history.push('/page-404');
+         history.push('/admin/page-404');
          return;
       }
       this.setState({ 
@@ -59,7 +59,7 @@ class CategoryShow extends React.Component {
                         simpleTable={true}
                      />
                      <div className="mt-6">
-                        <Link to='/category' className="inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900">
+                        <Link to='/admin/category' className="inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900">
                            <HiOutlineArrowLeft size={25} />
                            <p className="pl-3">Volver</p>
                         </Link>

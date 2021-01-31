@@ -65,13 +65,13 @@ class DataTable extends React.Component {
                !simpleTable && (
                   <td className="flex items-center justify-end gap-1 px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                      <Link
-                        to={`/${path}/${data.id}`}
+                        to={`/admin/${path}/${data.id}`}
                         className="bg-pink-700 rounded p-2 text-white hover:bg-pink-900"
                      >
                         <HiOutlineInformationCircle size={22} />
                      </Link>
                      <Link
-                        to={`/${path}/edit/${data.id}`}
+                        to={`/admin/${path}/edit/${data.id}`}
                         className="bg-blue-700 rounded p-2 text-white hover:bg-blue-900"
                      >
                         <HiOutlinePencilAlt size={22} />

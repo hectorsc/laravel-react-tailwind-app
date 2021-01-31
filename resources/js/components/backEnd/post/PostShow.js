@@ -18,7 +18,7 @@ class PostShow extends React.Component {
    async componentDidMount() {
       const response = await fetchData('post', this.props.match.params.id);
       if (response.exception) {
-         history.push('/page-404');
+         history.push('/admin/page-404');
          return;
       }
       this.setState({ 
@@ -73,7 +73,7 @@ class PostShow extends React.Component {
                               
                            </div>
                            <div className="mt-6">
-                              <Link to='/post' className="inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900">
+                              <Link to='/admin/post' className="inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900">
                                  <HiOutlineArrowLeft size={25} />
                                  <p className="pl-3">Volver</p>
                               </Link>

@@ -86208,7 +86208,7 @@ var CategoryCreate = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/category",
+        to: "/admin/category",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Categor\xEDas"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -86312,7 +86312,7 @@ var CategoryEdit = /*#__PURE__*/function (_React$Component) {
                 break;
               }
 
-              _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+              _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/admin/page-404');
               return _context.abrupt("return");
 
             case 6:
@@ -86367,7 +86367,7 @@ var CategoryEdit = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/category",
+        to: "/admin/category",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Categor\xEDas"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -86485,7 +86485,7 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push("/page-403");
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/admin/page-403');
                 return _context.abrupt("return");
 
               case 7:
@@ -86501,7 +86501,7 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
                 return _context.abrupt("return");
 
               case 10:
-                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/category');
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/admin/category');
 
               case 11:
               case "end":
@@ -86693,7 +86693,7 @@ var CategoryList = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "font-bold text-2xl"
       }, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/category/new",
+        to: "/admin/category/new",
         className: "btn-create"
       }, "Crear categor\xEDa")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_datatable_DataTable__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: this.fetchCategories,
@@ -86852,7 +86852,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/admin/page-404');
                 return _context3.abrupt("return");
 
               case 6:
@@ -86894,7 +86894,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "mt-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/category",
+        to: "/admin/category",
         className: "inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_8__["HiOutlineArrowLeft"], {
         size: 25
@@ -87141,12 +87141,12 @@ var DataTable = /*#__PURE__*/function (_React$Component) {
         }), !simpleTable && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
           className: "flex items-center justify-end gap-1 px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/".concat(path, "/").concat(data.id),
+          to: "/admin/".concat(path, "/").concat(data.id),
           className: "bg-pink-700 rounded p-2 text-white hover:bg-pink-900"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_5__["HiOutlineInformationCircle"], {
           size: 22
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/".concat(path, "/edit/").concat(data.id),
+          to: "/admin/".concat(path, "/edit/").concat(data.id),
           className: "bg-blue-700 rounded p-2 text-white hover:bg-blue-900"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_5__["HiOutlinePencilAlt"], {
           size: 22
@@ -87451,7 +87451,7 @@ var NavBarV2 = function NavBarV2() {
     className: "my-nav py-14 w-15 shadow min-h-screen text-white bg-indigo-600"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     activeClassName: "bg-pink-700 ",
-    to: "/dashboard",
+    to: "/admin/dashboard",
     className: "flex items-center px-4 py-3 border-b border-indigo-200 border-t border-opacity-25 hover:bg-pink-700"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "-mx-0.5"
@@ -87461,7 +87461,7 @@ var NavBarV2 = function NavBarV2() {
     className: "ml-5 text-sm uppercase font-semibold"
   }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     activeClassName: "bg-pink-700 ",
-    to: "/category",
+    to: "/admin/category",
     className: "flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "-mx-0.5"
@@ -87471,7 +87471,7 @@ var NavBarV2 = function NavBarV2() {
     className: "ml-5 text-sm uppercase font-semibold"
   }, "Categor\xEDas")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     activeClassName: "bg-pink-700 ",
-    to: "/product",
+    to: "/admin/product",
     className: "flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "-mx-0.5"
@@ -87481,7 +87481,7 @@ var NavBarV2 = function NavBarV2() {
     className: "ml-5 text-sm uppercase font-semibold"
   }, "Productos")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     activeClassName: "bg-pink-700 ",
-    to: "/tag",
+    to: "/admin/tag",
     className: "flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "-mx-0.5"
@@ -87491,7 +87491,7 @@ var NavBarV2 = function NavBarV2() {
     className: "ml-5 text-sm uppercase font-semibold"
   }, "Etiquetas")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     activeClassName: "bg-pink-700 ",
-    to: "/post",
+    to: "/admin/post",
     className: "flex items-center px-4 py-3 border-b border-indigo-200 border-opacity-25 hover:bg-pink-700"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "-mx-0.5"
@@ -87707,7 +87707,7 @@ var PostCreate = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/post",
+        to: "/admin/post",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Noticias"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -87832,7 +87832,7 @@ var PostEdit = /*#__PURE__*/function (_React$Component) {
                 break;
               }
 
-              _history__WEBPACK_IMPORTED_MODULE_4__["default"].push('/page-404');
+              _history__WEBPACK_IMPORTED_MODULE_4__["default"].push('/admin/page-404');
               return _context.abrupt("return");
 
             case 6:
@@ -87913,7 +87913,7 @@ var PostEdit = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/post",
+        to: "/admin/post",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Noticias"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -88047,7 +88047,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push("/page-403");
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/admin/page-403');
                 return _context.abrupt("return");
 
               case 7:
@@ -88063,7 +88063,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
                 return _context.abrupt("return");
 
               case 10:
-                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/post');
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/admin/post');
 
               case 11:
               case "end":
@@ -88305,7 +88305,7 @@ var PostList = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "font-bold text-2xl"
       }, "Noticias"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/post/new",
+        to: "/admin/post/new",
         className: "btn-create"
       }, "Crear noticia")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_datatable_DataTable__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: this.fetchPosts,
@@ -88415,7 +88415,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/admin/page-404');
                 return _context.abrupt("return");
 
               case 6:
@@ -88488,7 +88488,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       }, "Contenido: "), post.body))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "mt-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/post",
+        to: "/admin/post",
         className: "inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_6__["HiOutlineArrowLeft"], {
         size: 25
@@ -88675,7 +88675,7 @@ var ProductCreate = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/product",
+        to: "/admin/product",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Productos"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -88800,7 +88800,7 @@ var ProductEdit = /*#__PURE__*/function (_React$Component) {
                 break;
               }
 
-              _history__WEBPACK_IMPORTED_MODULE_4__["default"].push('/page-404');
+              _history__WEBPACK_IMPORTED_MODULE_4__["default"].push('/admin/page-404');
               return _context.abrupt("return");
 
             case 6:
@@ -88883,7 +88883,7 @@ var ProductEdit = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/product",
+        to: "/admin/product",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Productos"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -89014,7 +89014,7 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_3__["default"].push("/page-403");
+                _history__WEBPACK_IMPORTED_MODULE_3__["default"].push('/admin/page-403');
                 return _context.abrupt("return");
 
               case 7:
@@ -89030,7 +89030,7 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
                 return _context.abrupt("return");
 
               case 10:
-                _history__WEBPACK_IMPORTED_MODULE_3__["default"].push('/product');
+                _history__WEBPACK_IMPORTED_MODULE_3__["default"].push('/admin/product');
 
               case 11:
               case "end":
@@ -89286,7 +89286,7 @@ var ProductList = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "font-bold text-2xl"
       }, "Productos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/product/new",
+        to: "/admin/product/new",
         className: "btn-create"
       }, "Crear producto")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_datatable_DataTable__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: this.fetchProducts,
@@ -89395,7 +89395,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/admin/page-404');
                 return _context.abrupt("return");
 
               case 6:
@@ -89463,7 +89463,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       }, product.offer_price, " \u20AC"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "mt-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/product",
+        to: "/admin/product",
         className: "inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_6__["HiOutlineArrowLeft"], {
         size: 25
@@ -89528,55 +89528,55 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [{
-  path: '/dashboard',
+  path: '/admin/dashboard',
   component: _Home__WEBPACK_IMPORTED_MODULE_0__["default"]
 }, {
-  path: '/category',
+  path: '/admin/category',
   component: _category_CategoryList__WEBPACK_IMPORTED_MODULE_1__["default"]
 }, {
-  path: '/category/new',
+  path: '/admin/category/new',
   component: _category_CategoryCreate__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
-  path: '/category/edit/:id',
+  path: '/admin/category/edit/:id',
   component: _category_CategoryEdit__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
-  path: '/category/:id',
+  path: '/admin/category/:id',
   component: _category_CategoryShow__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
-  path: '/product',
+  path: '/admin/product',
   component: _product_ProductList__WEBPACK_IMPORTED_MODULE_5__["default"]
 }, {
-  path: '/product/new',
+  path: '/admin/product/new',
   component: _product_ProductCreate__WEBPACK_IMPORTED_MODULE_6__["default"]
 }, {
-  path: '/product/edit/:id',
+  path: '/admin/product/edit/:id',
   component: _product_ProductEdit__WEBPACK_IMPORTED_MODULE_7__["default"]
 }, {
-  path: '/product/:id',
+  path: '/admin/product/:id',
   component: _product_ProductShow__WEBPACK_IMPORTED_MODULE_8__["default"]
 }, {
-  path: '/tag',
+  path: '/admin/tag',
   component: _tag_TagList__WEBPACK_IMPORTED_MODULE_9__["default"]
 }, {
-  path: '/tag/new',
+  path: '/admin/tag/new',
   component: _tag_TagCreate__WEBPACK_IMPORTED_MODULE_10__["default"]
 }, {
-  path: '/tag/edit/:id',
+  path: '/admin/tag/edit/:id',
   component: _tag_TagEdit__WEBPACK_IMPORTED_MODULE_11__["default"]
 }, {
-  path: '/tag/:id',
+  path: '/admin/tag/:id',
   component: _tag_TagShow__WEBPACK_IMPORTED_MODULE_12__["default"]
 }, {
-  path: '/post',
+  path: '/admin/post',
   component: _post_PostList__WEBPACK_IMPORTED_MODULE_13__["default"]
 }, {
-  path: '/post/new',
+  path: '/admin/post/new',
   component: _post_PostCreate__WEBPACK_IMPORTED_MODULE_14__["default"]
 }, {
-  path: '/post/edit/:id',
+  path: '/admin/post/edit/:id',
   component: _post_PostEdit__WEBPACK_IMPORTED_MODULE_15__["default"]
 }, {
-  path: '/post/:id',
+  path: '/admin/post/:id',
   component: _post_PostShow__WEBPACK_IMPORTED_MODULE_16__["default"]
 }, {
   path: '*',
@@ -89723,7 +89723,7 @@ var TagCreate = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/tag",
+        to: "/admin/tag",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Etiquetas"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -89827,7 +89827,7 @@ var TagEdit = /*#__PURE__*/function (_React$Component) {
                 break;
               }
 
-              _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+              _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/admin/page-404');
               return _context.abrupt("return");
 
             case 6:
@@ -89882,7 +89882,7 @@ var TagEdit = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mb-2 font-bold text-2xl"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        to: "/tag",
+        to: "/admin/tag",
         className: "text-indigo-500 hover:text-indigo-600"
       }, "Etiquetas"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "text-indigo-400 font-medium"
@@ -90000,7 +90000,7 @@ var TagForm = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push("/page-403");
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/admin/page-403');
                 return _context.abrupt("return");
 
               case 7:
@@ -90016,7 +90016,7 @@ var TagForm = /*#__PURE__*/function (_React$Component) {
                 return _context.abrupt("return");
 
               case 10:
-                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/tag');
+                _history__WEBPACK_IMPORTED_MODULE_2__["default"].push('/admin/tag');
 
               case 11:
               case "end":
@@ -90208,7 +90208,7 @@ var TagList = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "font-bold text-2xl"
       }, "Etiquetas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/tag/new",
+        to: "/admin/tag/new",
         className: "btn-create"
       }, "Crear etiqueta")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_datatable_DataTable__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: this.fetchTags,
@@ -90367,7 +90367,7 @@ var TagShow = /*#__PURE__*/function (_React$Component) {
                   break;
                 }
 
-                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/admin/page-404');
                 return _context3.abrupt("return");
 
               case 6:
@@ -90409,7 +90409,7 @@ var TagShow = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "mt-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/tag",
+        to: "/admin/tag",
         className: "inline-flex p-2 pr-4 bg-indigo-600 text-white rounded hover:bg-indigo-900"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_hi__WEBPACK_IMPORTED_MODULE_8__["HiOutlineArrowLeft"], {
         size: 25

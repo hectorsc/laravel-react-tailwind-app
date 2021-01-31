@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/admin/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// REACT
-Route::get('/{path?}', function () {
-    $view = auth()->check() ? 'dashboard' : 'welcome';
-    return view($view);
-})->where('path', '.*');
+// REACT BACK
+Route::get('/admin/{path?}', function () {
+    return view('dashboard');
+})->where('path', '.*')->middleware('auth:sanctum');
+
+// REACT FRONT
+Route::get('/{path?}', ReactController::class)->where('path', '.*');

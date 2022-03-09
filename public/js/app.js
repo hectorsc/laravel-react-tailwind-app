@@ -1305,12 +1305,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _emotion_cache__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/cache */ "./node_modules/@emotion/cache/dist/cache.browser.esm.js");
-/* harmony import */ var _emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./emotion-element-57a3a7a3.browser.esm.js */ "./node_modules/@emotion/core/dist/emotion-element-57a3a7a3.browser.esm.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CacheProvider", function() { return _emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["C"]; });
+/* harmony import */ var _emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./emotion-element-04d85134.browser.esm.js */ "./node_modules/@emotion/core/dist/emotion-element-04d85134.browser.esm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CacheProvider", function() { return _emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["C"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ThemeContext", function() { return _emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["T"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ThemeContext", function() { return _emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["T"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withEmotionCache", function() { return _emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["w"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withEmotionCache", function() { return _emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["w"]; });
 
 /* harmony import */ var _emotion_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/utils */ "./node_modules/@emotion/utils/dist/utils.browser.esm.js");
 /* harmony import */ var _emotion_serialize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/serialize */ "./node_modules/@emotion/serialize/dist/serialize.browser.esm.js");
@@ -1332,15 +1332,15 @@ __webpack_require__.r(__webpack_exports__);
 var jsx = function jsx(type, props) {
   var args = arguments;
 
-  if (props == null || !_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["h"].call(props, 'css')) {
+  if (props == null || !_emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["h"].call(props, 'css')) {
     // $FlowFixMe
     return react__WEBPACK_IMPORTED_MODULE_1__["createElement"].apply(undefined, args);
   }
 
   var argsLength = args.length;
   var createElementArgArray = new Array(argsLength);
-  createElementArgArray[0] = _emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["E"];
-  createElementArgArray[1] = Object(_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["c"])(type, props);
+  createElementArgArray[0] = _emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["E"];
+  createElementArgArray[1] = Object(_emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["c"])(type, props);
 
   for (var i = 2; i < argsLength; i++) {
     createElementArgArray[i] = args[i];
@@ -1351,7 +1351,7 @@ var jsx = function jsx(type, props) {
 };
 
 var warnedAboutCssPropForGlobal = false;
-var Global = /* #__PURE__ */Object(_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["w"])(function (props, cache) {
+var Global = /* #__PURE__ */Object(_emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["w"])(function (props, cache) {
   if ( true && !warnedAboutCssPropForGlobal && ( // check for className as well since the user is
   // probably using the custom createElement which
   // means it will be turned into a className prop
@@ -1364,7 +1364,7 @@ var Global = /* #__PURE__ */Object(_emotion_element_57a3a7a3_browser_esm_js__WEB
   var styles = props.styles;
 
   if (typeof styles === 'function') {
-    return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["T"].Consumer, null, function (theme) {
+    return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["T"].Consumer, null, function (theme) {
       var serialized = Object(_emotion_serialize__WEBPACK_IMPORTED_MODULE_5__["serializeStyles"])([styles(theme)]);
       return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerGlobal, {
         serialized: serialized,
@@ -1518,8 +1518,12 @@ function merge(registered, css, className) {
   return rawClassName + css(registeredStyles);
 }
 
-var ClassNames = Object(_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["w"])(function (props, context) {
-  return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["T"].Consumer, null, function (theme) {
+var Noop = function Noop() {
+  return null;
+};
+
+var ClassNames = Object(_emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["w"])(function (props, context) {
+  return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_emotion_element_04d85134_browser_esm_js__WEBPACK_IMPORTED_MODULE_3__["T"].Consumer, null, function (theme) {
     var hasRendered = false;
 
     var css = function css() {
@@ -1559,8 +1563,10 @@ var ClassNames = Object(_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORT
     };
     var ele = props.children(content);
     hasRendered = true;
+    var possiblyStyleElement = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Noop, null);
 
-    return ele;
+
+    return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, possiblyStyleElement, ele);
   });
 });
 
@@ -1569,9 +1575,9 @@ var ClassNames = Object(_emotion_element_57a3a7a3_browser_esm_js__WEBPACK_IMPORT
 
 /***/ }),
 
-/***/ "./node_modules/@emotion/core/dist/emotion-element-57a3a7a3.browser.esm.js":
+/***/ "./node_modules/@emotion/core/dist/emotion-element-04d85134.browser.esm.js":
 /*!*********************************************************************************!*\
-  !*** ./node_modules/@emotion/core/dist/emotion-element-57a3a7a3.browser.esm.js ***!
+  !*** ./node_modules/@emotion/core/dist/emotion-element-04d85134.browser.esm.js ***!
   \*********************************************************************************/
 /*! exports provided: C, E, T, c, h, w */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1665,6 +1671,10 @@ var createEmotionProps = function createEmotionProps(type, props) {
   return newProps;
 };
 
+var Noop = function Noop() {
+  return null;
+};
+
 var render = function render(cache, props, theme, ref) {
   var cssProp = theme === null ? props.css : props.css(theme); // so that using `css` from `emotion` and passing the result to the css prop works
   // not passing the registered cache to serializeStyles because it would
@@ -1707,8 +1717,10 @@ var render = function render(cache, props, theme, ref) {
   newProps.ref = ref;
   newProps.className = className;
   var ele = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(type, newProps);
+  var possiblyStyleElement = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Noop, null);
 
-  return ele;
+
+  return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, possiblyStyleElement, ele);
 }; // eslint-disable-next-line no-undef
 
 
@@ -11314,7 +11326,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "input#menu {\n  display: none;\n}\n\n.icon {\n  cursor: pointer;\n  display: block;\n  padding: 28px;\n  width: 24px;\n}\n\nlabel.icon {\n  position: absolute;\n  z-index: 200;\n}\n\n.icon .menu,\r\n.icon .menu::before,\r\n.icon .menu::after {\n  background: white;\n  content: '';\n  display: block;\n  height: 2px;\n  position: absolute;\n  transition: background ease .3s, top ease .3s .3s, transform ease .3s;\n  width: 20px;\n}\n\n.icon:hover .menu,\r\n.icon:hover .menu::before,\r\n.icon:hover .menu::after {\n  background: #bf125d;\n}\n\n.icon .menu {\n  left: 18px;\n  top: 27px;\n}\n\n.icon .menu::before {\n  top: -6px;\n}\n\n.icon .menu::after {\n  top: 6px;\n}\n\n#menu:checked+.icon .menu {\n  background: transparent;\n}\n\n#menu:checked+.icon .menu::before {\n  transform: rotate(45deg);\n}\n\n#menu:checked+.icon .menu::after {\n  transform: rotate(-45deg);\n}\n\n#menu:checked+.icon .menu::before,\r\n#menu:checked+.icon .menu::after {\n  top: 0;\n  transition: top ease .3s, transform ease .3s .3s;\n}\n\nnav.my-nav {\n  transition: width ease .6s;\n  overflow: hidden;\n}\n\n/* esto es lo que hace que se abra el menu */\n\n#menu:checked~nav {\n  width: 16rem !important;\n}\n\n@media (max-width: 885px) {\n  .my-nav {\n    min-width: 56px;\n  }\n\n  .my-container {\n    overflow-x: hidden;\n  }\n\n  #menu:checked~nav {\n    width: 0;\n  }\n\n  label.icon {\n    display:none;\n  }\n}", ""]);
+exports.push([module.i, "input#menu {\n  display: none;\n}\n\n.icon {\n  cursor: pointer;\n  display: block;\n  padding: 28px;\n  width: 24px;\n}\n\nlabel.icon {\n  position: absolute;\n  z-index: 200;\n}\n\n.icon .menu,\n.icon .menu::before,\n.icon .menu::after {\n  background: white;\n  content: '';\n  display: block;\n  height: 2px;\n  position: absolute;\n  transition: background ease .3s, top ease .3s .3s, transform ease .3s;\n  width: 20px;\n}\n\n.icon:hover .menu,\n.icon:hover .menu::before,\n.icon:hover .menu::after {\n  background: #bf125d;\n}\n\n.icon .menu {\n  left: 18px;\n  top: 27px;\n}\n\n.icon .menu::before {\n  top: -6px;\n}\n\n.icon .menu::after {\n  top: 6px;\n}\n\n#menu:checked+.icon .menu {\n  background: transparent;\n}\n\n#menu:checked+.icon .menu::before {\n  transform: rotate(45deg);\n}\n\n#menu:checked+.icon .menu::after {\n  transform: rotate(-45deg);\n}\n\n#menu:checked+.icon .menu::before,\n#menu:checked+.icon .menu::after {\n  top: 0;\n  transition: top ease .3s, transform ease .3s .3s;\n}\n\nnav.my-nav {\n  transition: width ease .6s;\n  overflow: hidden;\n}\n\n/* esto es lo que hace que se abra el menu */\n\n#menu:checked~nav {\n  width: 16rem !important;\n}\n\n@media (max-width: 885px) {\n  .my-nav {\n    min-width: 56px;\n  }\n\n  .my-container {\n    overflow-x: hidden;\n  }\n\n  #menu:checked~nav {\n    width: 0;\n  }\n\n  label.icon {\n    display:none;\n  }\n}", ""]);
 
 // exports
 
@@ -40587,12 +40599,25 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var safeIsNaN = Number.isNaN ||
+    function ponyfill(value) {
+        return typeof value === 'number' && value !== value;
+    };
+function isEqual(first, second) {
+    if (first === second) {
+        return true;
+    }
+    if (safeIsNaN(first) && safeIsNaN(second)) {
+        return true;
+    }
+    return false;
+}
 function areInputsEqual(newInputs, lastInputs) {
     if (newInputs.length !== lastInputs.length) {
         return false;
     }
     for (var i = 0; i < newInputs.length; i++) {
-        if (newInputs[i] !== lastInputs[i]) {
+        if (!isEqual(newInputs[i], lastInputs[i])) {
             return false;
         }
     }
@@ -40920,457 +40945,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	}
 
 	return to;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/path-to-regexp/index.js":
-/*!**********************************************!*\
-  !*** ./node_modules/path-to-regexp/index.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
-
-/**
- * Expose `pathToRegexp`.
- */
-module.exports = pathToRegexp
-module.exports.parse = parse
-module.exports.compile = compile
-module.exports.tokensToFunction = tokensToFunction
-module.exports.tokensToRegExp = tokensToRegExp
-
-/**
- * The main path matching regexp utility.
- *
- * @type {RegExp}
- */
-var PATH_REGEXP = new RegExp([
-  // Match escaped characters that would otherwise appear in future matches.
-  // This allows the user to escape special characters that won't transform.
-  '(\\\\.)',
-  // Match Express-style parameters and un-named parameters with a prefix
-  // and optional suffixes. Matches appear as:
-  //
-  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
-  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
-  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
-  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
-].join('|'), 'g')
-
-/**
- * Parse a string for the raw tokens.
- *
- * @param  {string}  str
- * @param  {Object=} options
- * @return {!Array}
- */
-function parse (str, options) {
-  var tokens = []
-  var key = 0
-  var index = 0
-  var path = ''
-  var defaultDelimiter = options && options.delimiter || '/'
-  var res
-
-  while ((res = PATH_REGEXP.exec(str)) != null) {
-    var m = res[0]
-    var escaped = res[1]
-    var offset = res.index
-    path += str.slice(index, offset)
-    index = offset + m.length
-
-    // Ignore already escaped sequences.
-    if (escaped) {
-      path += escaped[1]
-      continue
-    }
-
-    var next = str[index]
-    var prefix = res[2]
-    var name = res[3]
-    var capture = res[4]
-    var group = res[5]
-    var modifier = res[6]
-    var asterisk = res[7]
-
-    // Push the current path onto the tokens.
-    if (path) {
-      tokens.push(path)
-      path = ''
-    }
-
-    var partial = prefix != null && next != null && next !== prefix
-    var repeat = modifier === '+' || modifier === '*'
-    var optional = modifier === '?' || modifier === '*'
-    var delimiter = res[2] || defaultDelimiter
-    var pattern = capture || group
-
-    tokens.push({
-      name: name || key++,
-      prefix: prefix || '',
-      delimiter: delimiter,
-      optional: optional,
-      repeat: repeat,
-      partial: partial,
-      asterisk: !!asterisk,
-      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
-    })
-  }
-
-  // Match any characters still remaining.
-  if (index < str.length) {
-    path += str.substr(index)
-  }
-
-  // If the path exists, push it onto the end.
-  if (path) {
-    tokens.push(path)
-  }
-
-  return tokens
-}
-
-/**
- * Compile a string to a template function for the path.
- *
- * @param  {string}             str
- * @param  {Object=}            options
- * @return {!function(Object=, Object=)}
- */
-function compile (str, options) {
-  return tokensToFunction(parse(str, options), options)
-}
-
-/**
- * Prettier encoding of URI path segments.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeURIComponentPretty (str) {
-  return encodeURI(str).replace(/[\/?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeAsterisk (str) {
-  return encodeURI(str).replace(/[?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Expose a method for transforming tokens into the path function.
- */
-function tokensToFunction (tokens, options) {
-  // Compile all the tokens into regexps.
-  var matches = new Array(tokens.length)
-
-  // Compile all the patterns before compilation.
-  for (var i = 0; i < tokens.length; i++) {
-    if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options))
-    }
-  }
-
-  return function (obj, opts) {
-    var path = ''
-    var data = obj || {}
-    var options = opts || {}
-    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
-
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i]
-
-      if (typeof token === 'string') {
-        path += token
-
-        continue
-      }
-
-      var value = data[token.name]
-      var segment
-
-      if (value == null) {
-        if (token.optional) {
-          // Prepend partial segment prefixes.
-          if (token.partial) {
-            path += token.prefix
-          }
-
-          continue
-        } else {
-          throw new TypeError('Expected "' + token.name + '" to be defined')
-        }
-      }
-
-      if (isarray(value)) {
-        if (!token.repeat) {
-          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
-        }
-
-        if (value.length === 0) {
-          if (token.optional) {
-            continue
-          } else {
-            throw new TypeError('Expected "' + token.name + '" to not be empty')
-          }
-        }
-
-        for (var j = 0; j < value.length; j++) {
-          segment = encode(value[j])
-
-          if (!matches[i].test(segment)) {
-            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
-          }
-
-          path += (j === 0 ? token.prefix : token.delimiter) + segment
-        }
-
-        continue
-      }
-
-      segment = token.asterisk ? encodeAsterisk(value) : encode(value)
-
-      if (!matches[i].test(segment)) {
-        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
-      }
-
-      path += token.prefix + segment
-    }
-
-    return path
-  }
-}
-
-/**
- * Escape a regular expression string.
- *
- * @param  {string} str
- * @return {string}
- */
-function escapeString (str) {
-  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
-}
-
-/**
- * Escape the capturing group by escaping special characters and meaning.
- *
- * @param  {string} group
- * @return {string}
- */
-function escapeGroup (group) {
-  return group.replace(/([=!:$\/()])/g, '\\$1')
-}
-
-/**
- * Attach the keys as a property of the regexp.
- *
- * @param  {!RegExp} re
- * @param  {Array}   keys
- * @return {!RegExp}
- */
-function attachKeys (re, keys) {
-  re.keys = keys
-  return re
-}
-
-/**
- * Get the flags for a regexp from the options.
- *
- * @param  {Object} options
- * @return {string}
- */
-function flags (options) {
-  return options && options.sensitive ? '' : 'i'
-}
-
-/**
- * Pull out keys from a regexp.
- *
- * @param  {!RegExp} path
- * @param  {!Array}  keys
- * @return {!RegExp}
- */
-function regexpToRegexp (path, keys) {
-  // Use a negative lookahead to match only capturing groups.
-  var groups = path.source.match(/\((?!\?)/g)
-
-  if (groups) {
-    for (var i = 0; i < groups.length; i++) {
-      keys.push({
-        name: i,
-        prefix: null,
-        delimiter: null,
-        optional: false,
-        repeat: false,
-        partial: false,
-        asterisk: false,
-        pattern: null
-      })
-    }
-  }
-
-  return attachKeys(path, keys)
-}
-
-/**
- * Transform an array into a regexp.
- *
- * @param  {!Array}  path
- * @param  {Array}   keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function arrayToRegexp (path, keys, options) {
-  var parts = []
-
-  for (var i = 0; i < path.length; i++) {
-    parts.push(pathToRegexp(path[i], keys, options).source)
-  }
-
-  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
-
-  return attachKeys(regexp, keys)
-}
-
-/**
- * Create a path regexp from string input.
- *
- * @param  {string}  path
- * @param  {!Array}  keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function stringToRegexp (path, keys, options) {
-  return tokensToRegExp(parse(path, options), keys, options)
-}
-
-/**
- * Expose a function for taking tokens and returning a RegExp.
- *
- * @param  {!Array}          tokens
- * @param  {(Array|Object)=} keys
- * @param  {Object=}         options
- * @return {!RegExp}
- */
-function tokensToRegExp (tokens, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options)
-    keys = []
-  }
-
-  options = options || {}
-
-  var strict = options.strict
-  var end = options.end !== false
-  var route = ''
-
-  // Iterate over the tokens and create our regexp string.
-  for (var i = 0; i < tokens.length; i++) {
-    var token = tokens[i]
-
-    if (typeof token === 'string') {
-      route += escapeString(token)
-    } else {
-      var prefix = escapeString(token.prefix)
-      var capture = '(?:' + token.pattern + ')'
-
-      keys.push(token)
-
-      if (token.repeat) {
-        capture += '(?:' + prefix + capture + ')*'
-      }
-
-      if (token.optional) {
-        if (!token.partial) {
-          capture = '(?:' + prefix + '(' + capture + '))?'
-        } else {
-          capture = prefix + '(' + capture + ')?'
-        }
-      } else {
-        capture = prefix + '(' + capture + ')'
-      }
-
-      route += capture
-    }
-  }
-
-  var delimiter = escapeString(options.delimiter || '/')
-  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
-
-  // In non-strict mode we allow a slash at the end of match. If the path to
-  // match already ends with a slash, we remove it for consistency. The slash
-  // is valid at the end of a path match, not in the middle. This is important
-  // in non-ending mode, where "/test/" shouldn't match "/test//route".
-  if (!strict) {
-    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
-  }
-
-  if (end) {
-    route += '$'
-  } else {
-    // In non-ending mode, we need the capturing groups to match as much as
-    // possible by using a positive lookahead to the end or next path segment.
-    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
-  }
-
-  return attachKeys(new RegExp('^' + route, flags(options)), keys)
-}
-
-/**
- * Normalize the given path string, returning a regular expression.
- *
- * An empty array can be passed in for the keys, which will hold the
- * placeholder key descriptions. For example, using `/user/:id`, `keys` will
- * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
- *
- * @param  {(string|RegExp|Array)} path
- * @param  {(Array|Object)=}       keys
- * @param  {Object=}               options
- * @return {!RegExp}
- */
-function pathToRegexp (path, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options)
-    keys = []
-  }
-
-  options = options || {}
-
-  if (path instanceof RegExp) {
-    return regexpToRegexp(path, /** @type {!Array} */ (keys))
-  }
-
-  if (isarray(path)) {
-    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
-  }
-
-  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
 
@@ -71839,6 +71413,15 @@ var generateId = function generateId() {
 var AutosizeInput = function (_Component) {
 	_inherits(AutosizeInput, _Component);
 
+	_createClass(AutosizeInput, null, [{
+		key: 'getDerivedStateFromProps',
+		value: function getDerivedStateFromProps(props, state) {
+			var id = props.id;
+
+			return id !== state.prevId ? { inputId: id || generateId(), prevId: id } : null;
+		}
+	}]);
+
 	function AutosizeInput(props) {
 		_classCallCheck(this, AutosizeInput);
 
@@ -71861,7 +71444,8 @@ var AutosizeInput = function (_Component) {
 
 		_this.state = {
 			inputWidth: props.minWidth,
-			inputId: props.id || generateId()
+			inputId: props.id || generateId(),
+			prevId: props.id
 		};
 		return _this;
 	}
@@ -71872,15 +71456,6 @@ var AutosizeInput = function (_Component) {
 			this.mounted = true;
 			this.copyInputStyles();
 			this.updateInputWidth();
-		}
-	}, {
-		key: 'UNSAFE_componentWillReceiveProps',
-		value: function UNSAFE_componentWillReceiveProps(nextProps) {
-			var id = nextProps.id;
-
-			if (id !== this.props.id) {
-				this.setState({ inputId: id || generateId() });
-			}
 		}
 	}, {
 		key: 'componentDidUpdate',
@@ -72661,7 +72236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mini_create_react_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mini-create-react-context */ "./node_modules/mini-create-react-context/dist/esm/index.js");
 /* harmony import */ var tiny_invariant__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tiny-invariant */ "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/path-to-regexp/index.js");
+/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/react-router/node_modules/path-to-regexp/index.js");
 /* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(path_to_regexp__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
 /* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_is__WEBPACK_IMPORTED_MODULE_9__);
@@ -73442,6 +73017,457 @@ if (true) {
 
 /***/ }),
 
+/***/ "./node_modules/react-router/node_modules/isarray/index.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/isarray/index.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-router/node_modules/path-to-regexp/index.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/path-to-regexp/index.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/react-router/node_modules/isarray/index.js")
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+function parse (str, options) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var defaultDelimiter = options && options.delimiter || '/'
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) != null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      continue
+    }
+
+    var next = str[index]
+    var prefix = res[2]
+    var name = res[3]
+    var capture = res[4]
+    var group = res[5]
+    var modifier = res[6]
+    var asterisk = res[7]
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+    }
+
+    var partial = prefix != null && next != null && next !== prefix
+    var repeat = modifier === '+' || modifier === '*'
+    var optional = modifier === '?' || modifier === '*'
+    var delimiter = res[2] || defaultDelimiter
+    var pattern = capture || group
+
+    tokens.push({
+      name: name || key++,
+      prefix: prefix || '',
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      partial: partial,
+      asterisk: !!asterisk,
+      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
+    })
+  }
+
+  // Match any characters still remaining.
+  if (index < str.length) {
+    path += str.substr(index)
+  }
+
+  // If the path exists, push it onto the end.
+  if (path) {
+    tokens.push(path)
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+function compile (str, options) {
+  return tokensToFunction(parse(str, options), options)
+}
+
+/**
+ * Prettier encoding of URI path segments.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeURIComponentPretty (str) {
+  return encodeURI(str).replace(/[\/?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeAsterisk (str) {
+  return encodeURI(str).replace(/[?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens, options) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options))
+    }
+  }
+
+  return function (obj, opts) {
+    var path = ''
+    var data = obj || {}
+    var options = opts || {}
+    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+
+        continue
+      }
+
+      var value = data[token.name]
+      var segment
+
+      if (value == null) {
+        if (token.optional) {
+          // Prepend partial segment prefixes.
+          if (token.partial) {
+            path += token.prefix
+          }
+
+          continue
+        } else {
+          throw new TypeError('Expected "' + token.name + '" to be defined')
+        }
+      }
+
+      if (isarray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) {
+            continue
+          } else {
+            throw new TypeError('Expected "' + token.name + '" to not be empty')
+          }
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encode(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      segment = token.asterisk ? encodeAsterisk(value) : encode(value)
+
+      if (!matches[i].test(segment)) {
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+      }
+
+      path += token.prefix + segment
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$\/()])/g, '\\$1')
+}
+
+/**
+ * Attach the keys as a property of the regexp.
+ *
+ * @param  {!RegExp} re
+ * @param  {Array}   keys
+ * @return {!RegExp}
+ */
+function attachKeys (re, keys) {
+  re.keys = keys
+  return re
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+function flags (options) {
+  return options && options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {!RegExp} path
+ * @param  {!Array}  keys
+ * @return {!RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        partial: false,
+        asterisk: false,
+        pattern: null
+      })
+    }
+  }
+
+  return attachKeys(path, keys)
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {!Array}  path
+ * @param  {Array}   keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
+
+  return attachKeys(regexp, keys)
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {string}  path
+ * @param  {!Array}  keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  return tokensToRegExp(parse(path, options), keys, options)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {!Array}          tokens
+ * @param  {(Array|Object)=} keys
+ * @param  {Object=}         options
+ * @return {!RegExp}
+ */
+function tokensToRegExp (tokens, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var route = ''
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = '(?:' + token.pattern + ')'
+
+      keys.push(token)
+
+      if (token.repeat) {
+        capture += '(?:' + prefix + capture + ')*'
+      }
+
+      if (token.optional) {
+        if (!token.partial) {
+          capture = '(?:' + prefix + '(' + capture + '))?'
+        } else {
+          capture = prefix + '(' + capture + ')?'
+        }
+      } else {
+        capture = prefix + '(' + capture + ')'
+      }
+
+      route += capture
+    }
+  }
+
+  var delimiter = escapeString(options.delimiter || '/')
+  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
+
+  // In non-strict mode we allow a slash at the end of match. If the path to
+  // match already ends with a slash, we remove it for consistency. The slash
+  // is valid at the end of a path match, not in the middle. This is important
+  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+  if (!strict) {
+    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
+  }
+
+  if (end) {
+    route += '$'
+  } else {
+    // In non-ending mode, we need the capturing groups to match as much as
+    // possible by using a positive lookahead to the end or next path segment.
+    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
+  }
+
+  return attachKeys(new RegExp('^' + route, flags(options)), keys)
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(string|RegExp|Array)} path
+ * @param  {(Array|Object)=}       keys
+ * @param  {Object=}               options
+ * @return {!RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, /** @type {!Array} */ (keys))
+  }
+
+  if (isarray(path)) {
+    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
+  }
+
+  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/react-select/animated/dist/react-select.browser.esm.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/react-select/animated/dist/react-select.browser.esm.js ***!
@@ -73472,7 +73498,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
 /* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _dist_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../dist/index-4b37608a.browser.esm.js */ "./node_modules/react-select/dist/index-4b37608a.browser.esm.js");
+/* harmony import */ var _dist_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../dist/index-75b02bac.browser.esm.js */ "./node_modules/react-select/dist/index-75b02bac.browser.esm.js");
 /* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @emotion/css */ "./node_modules/@emotion/css/dist/css.browser.esm.js");
 /* harmony import */ var _babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @babel/runtime/helpers/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js");
 /* harmony import */ var _babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_15__);
@@ -73713,7 +73739,7 @@ function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { 
 
 var makeAnimated = function makeAnimated() {
   var externalComponents = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var components = Object(_dist_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_13__["y"])({
+  var components = Object(_dist_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_13__["y"])({
     components: externalComponents
   });
 
@@ -73739,7 +73765,7 @@ var MultiValue = AnimatedComponents.MultiValue;
 var Placeholder = AnimatedComponents.Placeholder;
 var SingleValue = AnimatedComponents.SingleValue;
 var ValueContainer = AnimatedComponents.ValueContainer;
-var index = Object(memoize_one__WEBPACK_IMPORTED_MODULE_9__["default"])(makeAnimated, _dist_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_13__["A"]);
+var index = Object(memoize_one__WEBPACK_IMPORTED_MODULE_9__["default"])(makeAnimated, _dist_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_13__["B"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
 
@@ -73747,9 +73773,9 @@ var index = Object(memoize_one__WEBPACK_IMPORTED_MODULE_9__["default"])(makeAnim
 
 /***/ }),
 
-/***/ "./node_modules/react-select/dist/Select-5d18b8d9.browser.esm.js":
+/***/ "./node_modules/react-select/dist/Select-e1cf49ae.browser.esm.js":
 /*!***********************************************************************!*\
-  !*** ./node_modules/react-select/dist/Select-5d18b8d9.browser.esm.js ***!
+  !*** ./node_modules/react-select/dist/Select-e1cf49ae.browser.esm.js ***!
   \***********************************************************************/
 /*! exports provided: S, a, c, d, m */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -73778,7 +73804,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./index-4b37608a.browser.esm.js */ "./node_modules/react-select/dist/index-4b37608a.browser.esm.js");
+/* harmony import */ var _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./index-75b02bac.browser.esm.js */ "./node_modules/react-select/dist/index-75b02bac.browser.esm.js");
 /* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @emotion/css */ "./node_modules/@emotion/css/dist/css.browser.esm.js");
 
 
@@ -74119,7 +74145,7 @@ function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringif
 var _ref =  false ? undefined : {
   name: "1laao21-a11yText",
   styles: "label:a11yText;z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkExMXlUZXh0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVFNIiwiZmlsZSI6IkExMXlUZXh0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZsb3dcbi8qKiBAanN4IGpzeCAqL1xuaW1wb3J0IHsgdHlwZSBFbGVtZW50Q29uZmlnIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsganN4IH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5cbi8vIEFzc2lzdGl2ZSB0ZXh0IHRvIGRlc2NyaWJlIHZpc3VhbCBlbGVtZW50cy4gSGlkZGVuIGZvciBzaWdodGVkIHVzZXJzLlxuY29uc3QgQTExeVRleHQgPSAocHJvcHM6IEVsZW1lbnRDb25maWc8J3NwYW4nPikgPT4gKFxuICAgIDxzcGFuXG4gICAgICBjc3M9e3tcbiAgICAgICAgbGFiZWw6ICdhMTF5VGV4dCcsXG4gICAgICAgIHpJbmRleDogOTk5OSxcbiAgICAgICAgYm9yZGVyOiAwLFxuICAgICAgICBjbGlwOiAncmVjdCgxcHgsIDFweCwgMXB4LCAxcHgpJyxcbiAgICAgICAgaGVpZ2h0OiAxLFxuICAgICAgICB3aWR0aDogMSxcbiAgICAgICAgcG9zaXRpb246ICdhYnNvbHV0ZScsXG4gICAgICAgIG92ZXJmbG93OiAnaGlkZGVuJyxcbiAgICAgICAgcGFkZGluZzogMCxcbiAgICAgICAgd2hpdGVTcGFjZTogJ25vd3JhcCcsXG4gICAgICB9fVxuICAgICAgey4uLnByb3BzfVxuICAgIC8+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBBMTF5VGV4dDtcbiJdfQ== */",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkExMXlUZXh0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVFJIiwiZmlsZSI6IkExMXlUZXh0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZsb3dcbi8qKiBAanN4IGpzeCAqL1xuaW1wb3J0IHsgdHlwZSBFbGVtZW50Q29uZmlnIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsganN4IH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5cbi8vIEFzc2lzdGl2ZSB0ZXh0IHRvIGRlc2NyaWJlIHZpc3VhbCBlbGVtZW50cy4gSGlkZGVuIGZvciBzaWdodGVkIHVzZXJzLlxuY29uc3QgQTExeVRleHQgPSAocHJvcHM6IEVsZW1lbnRDb25maWc8J3NwYW4nPikgPT4gKFxuICA8c3BhblxuICAgIGNzcz17e1xuICAgICAgbGFiZWw6ICdhMTF5VGV4dCcsXG4gICAgICB6SW5kZXg6IDk5OTksXG4gICAgICBib3JkZXI6IDAsXG4gICAgICBjbGlwOiAncmVjdCgxcHgsIDFweCwgMXB4LCAxcHgpJyxcbiAgICAgIGhlaWdodDogMSxcbiAgICAgIHdpZHRoOiAxLFxuICAgICAgcG9zaXRpb246ICdhYnNvbHV0ZScsXG4gICAgICBvdmVyZmxvdzogJ2hpZGRlbicsXG4gICAgICBwYWRkaW5nOiAwLFxuICAgICAgd2hpdGVTcGFjZTogJ25vd3JhcCcsXG4gICAgfX1cbiAgICB7Li4ucHJvcHN9XG4gIC8+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBBMTF5VGV4dDtcbiJdfQ== */",
   toString: _EMOTION_STRINGIFIED_CSS_ERROR__
 };
 
@@ -74581,7 +74607,8 @@ var ScrollCaptor = /*#__PURE__*/function (_Component) {
   }, {
     key: "stopListening",
     value: function stopListening(el) {
-      // all the if statements are to appease Flow 😢
+      if (!el) return; // all the if statements are to appease Flow 😢
+
       if (typeof el.removeEventListener === 'function') {
         el.removeEventListener('wheel', this.onWheel, false);
       }
@@ -74619,11 +74646,12 @@ var instructionsAriaMessage = function instructionsAriaMessage(event) {
   var isSearchable = context.isSearchable,
       isMulti = context.isMulti,
       label = context.label,
-      isDisabled = context.isDisabled;
+      isDisabled = context.isDisabled,
+      tabSelectsValue = context.tabSelectsValue;
 
   switch (event) {
     case 'menu':
-      return "Use Up and Down to choose options".concat(isDisabled ? '' : ', press Enter to select the currently focused option', ", press Escape to exit the menu, press Tab to select the option and exit the menu.");
+      return "Use Up and Down to choose options".concat(isDisabled ? '' : ', press Enter to select the currently focused option', ", press Escape to exit the menu").concat(tabSelectsValue ? ', press Tab to select the option and exit the menu' : '', ".");
 
     case 'input':
       return "".concat(label ? label : 'Select', " is focused ").concat(isSearchable ? ',type to refine list' : '', ", press Down to open the menu, ").concat(isMulti ? ' press left to focus selected values' : '');
@@ -74682,28 +74710,28 @@ function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if 
 
 function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$1(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_4__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$1(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var defaultStyles = {
-  clearIndicator: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["c"],
-  container: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["a"],
-  control: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["b"],
-  dropdownIndicator: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["d"],
-  group: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["g"],
-  groupHeading: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["e"],
-  indicatorsContainer: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["i"],
-  indicatorSeparator: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["f"],
-  input: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["h"],
-  loadingIndicator: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["l"],
-  loadingMessage: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["j"],
-  menu: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["m"],
-  menuList: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["k"],
-  menuPortal: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["n"],
-  multiValue: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["o"],
-  multiValueLabel: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["p"],
-  multiValueRemove: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["q"],
-  noOptionsMessage: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["r"],
-  option: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["s"],
-  placeholder: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["t"],
-  singleValue: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["u"],
-  valueContainer: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["v"]
+  clearIndicator: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["c"],
+  container: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["a"],
+  control: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["b"],
+  dropdownIndicator: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["d"],
+  group: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["g"],
+  groupHeading: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["e"],
+  indicatorsContainer: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["i"],
+  indicatorSeparator: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["f"],
+  input: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["h"],
+  loadingIndicator: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["l"],
+  loadingMessage: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["j"],
+  menu: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["m"],
+  menuList: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["k"],
+  menuPortal: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["n"],
+  multiValue: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["o"],
+  multiValueLabel: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["p"],
+  multiValueRemove: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["q"],
+  noOptionsMessage: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["r"],
+  option: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["s"],
+  placeholder: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["t"],
+  singleValue: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["u"],
+  valueContainer: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["v"]
 }; // Merge Utility
 // Allows consumers to extend a base Select with additional styles
 
@@ -74772,8 +74800,8 @@ function _createSuper$4(Derived) { var hasNativeReflectConstruct = _isNativeRefl
 function _isNativeReflectConstruct$4() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var defaultProps = {
   backspaceRemovesValue: true,
-  blurInputOnSelect: Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["w"])(),
-  captureMenuScroll: !Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["w"])(),
+  blurInputOnSelect: Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["w"])(),
+  captureMenuScroll: !Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["w"])(),
   closeMenuOnSelect: true,
   closeMenuOnScroll: false,
   components: {},
@@ -74798,7 +74826,7 @@ var defaultProps = {
   menuPlacement: 'bottom',
   menuPosition: 'absolute',
   menuShouldBlockScroll: false,
-  menuShouldScrollIntoView: !Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["x"])(),
+  menuShouldScrollIntoView: !Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["x"])(),
   noOptionsMessage: function noOptionsMessage() {
     return 'No options';
   },
@@ -74886,7 +74914,7 @@ var Select = /*#__PURE__*/function (_Component) {
     };
 
     _this.cacheComponents = function (components) {
-      _this.components = Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["y"])({
+      _this.components = Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["y"])({
         components: components
       });
     };
@@ -75022,9 +75050,7 @@ var Select = /*#__PURE__*/function (_Component) {
     };
 
     _this.clearValue = function () {
-      var isMulti = _this.props.isMulti;
-
-      _this.onChange(isMulti ? [] : null, {
+      _this.onChange(null, {
         action: 'clear'
       });
     };
@@ -75045,6 +75071,18 @@ var Select = /*#__PURE__*/function (_Component) {
         action: 'pop-value',
         removedValue: lastSelectedValue
       });
+    };
+
+    _this.getValue = function () {
+      return _this.state.selectValue;
+    };
+
+    _this.cx = function () {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["z"].apply(void 0, [_this.props.classNamePrefix].concat(args));
     };
 
     _this.getOptionLabel = function (data) {
@@ -75185,7 +75223,7 @@ var Select = /*#__PURE__*/function (_Component) {
 
     _this.onScroll = function (event) {
       if (typeof _this.props.closeMenuOnScroll === 'boolean') {
-        if (event.target instanceof HTMLElement && Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["z"])(event.target)) {
+        if (event.target instanceof HTMLElement && Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["A"])(event.target)) {
           _this.props.onMenuClose();
         }
       } else if (typeof _this.props.closeMenuOnScroll === 'function') {
@@ -75609,13 +75647,13 @@ var Select = /*#__PURE__*/function (_Component) {
     };
 
     var _value = _props.value;
-    _this.cacheComponents = Object(memoize_one__WEBPACK_IMPORTED_MODULE_12__["default"])(_this.cacheComponents, _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["A"]).bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this));
+    _this.cacheComponents = Object(memoize_one__WEBPACK_IMPORTED_MODULE_12__["default"])(_this.cacheComponents, _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["B"]).bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this));
 
     _this.cacheComponents(_props.components);
 
     _this.instancePrefix = 'react-select-' + (_this.props.instanceId || ++instanceId);
 
-    var _selectValue = Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["B"])(_value);
+    var _selectValue = Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["C"])(_value);
 
     _this.buildMenuOptions = Object(memoize_one__WEBPACK_IMPORTED_MODULE_12__["default"])(_this.buildMenuOptions, function (newArgs, lastArgs) {
       var _ref6 = newArgs,
@@ -75628,7 +75666,7 @@ var Select = /*#__PURE__*/function (_Component) {
           lastProps = _ref9[0],
           lastSelectValue = _ref9[1];
 
-      return Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["A"])(newSelectValue, lastSelectValue) && Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["A"])(newProps.inputValue, lastProps.inputValue) && Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["A"])(newProps.options, lastProps.options);
+      return newSelectValue === lastSelectValue && newProps.inputValue === lastProps.inputValue && newProps.options === lastProps.options;
     }).bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this));
 
     var _menuOptions = _props.menuIsOpen ? _this.buildMenuOptions(_props, _selectValue) : {
@@ -75668,7 +75706,7 @@ var Select = /*#__PURE__*/function (_Component) {
       this.cacheComponents(nextProps.components); // rebuild the menu options
 
       if (nextProps.value !== value || nextProps.options !== options || nextProps.menuIsOpen !== menuIsOpen || nextProps.inputValue !== inputValue) {
-        var selectValue = Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["B"])(nextProps.value);
+        var selectValue = Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["C"])(nextProps.value);
         var menuOptions = nextProps.menuIsOpen ? this.buildMenuOptions(nextProps, selectValue) : {
           render: [],
           focusable: []
@@ -75703,11 +75741,18 @@ var Select = /*#__PURE__*/function (_Component) {
       isFocused && !isDisabled && prevProps.isDisabled || // ensure focus is on the Input when the menu opens
       isFocused && menuIsOpen && !prevProps.menuIsOpen) {
         this.focusInput();
+      }
+
+      if (isFocused && isDisabled && !prevProps.isDisabled) {
+        // ensure select state gets blurred in case Select is programatically disabled while focused
+        this.setState({
+          isFocused: false
+        }, this.onMenuClose);
       } // scroll the focused option into view if necessary
 
 
       if (this.menuListRef && this.focusedOptionRef && this.scrollToFocusedOptionOnUpdate) {
-        Object(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["C"])(this.menuListRef, this.focusedOptionRef);
+        Object(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["D"])(this.menuListRef, this.focusedOptionRef);
         this.scrollToFocusedOptionOnUpdate = false;
       }
     }
@@ -75774,7 +75819,9 @@ var Select = /*#__PURE__*/function (_Component) {
           selectValue = _this$state3.selectValue,
           isFocused = _this$state3.isFocused;
       var menuOptions = this.buildMenuOptions(this.props, selectValue);
-      var isMulti = this.props.isMulti;
+      var _this$props11 = this.props,
+          isMulti = _this$props11.isMulti,
+          tabSelectsValue = _this$props11.tabSelectsValue;
       var openAtIndex = focusOption === 'first' ? 0 : menuOptions.focusable.length - 1;
 
       if (!isMulti) {
@@ -75796,16 +75843,19 @@ var Select = /*#__PURE__*/function (_Component) {
         _this2.onMenuOpen();
 
         _this2.announceAriaLiveContext({
-          event: 'menu'
+          event: 'menu',
+          context: {
+            tabSelectsValue: tabSelectsValue
+          }
         });
       });
     }
   }, {
     key: "focusValue",
     value: function focusValue(direction) {
-      var _this$props11 = this.props,
-          isMulti = _this$props11.isMulti,
-          isSearchable = _this$props11.isSearchable;
+      var _this$props12 = this.props,
+          isMulti = _this$props12.isMulti,
+          isSearchable = _this$props12.isSearchable;
       var _this$state4 = this.state,
           selectValue = _this$state4.selectValue,
           focusedValue = _this$state4.focusedValue; // Only multiselects support value focusing
@@ -75868,7 +75918,9 @@ var Select = /*#__PURE__*/function (_Component) {
     key: "focusOption",
     value: function focusOption() {
       var direction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'first';
-      var pageSize = this.props.pageSize;
+      var _this$props13 = this.props,
+          pageSize = _this$props13.pageSize,
+          tabSelectsValue = _this$props13.tabSelectsValue;
       var _this$state5 = this.state,
           focusedOption = _this$state5.focusedOption,
           menuOptions = _this$state5.menuOptions;
@@ -75881,7 +75933,10 @@ var Select = /*#__PURE__*/function (_Component) {
       if (!focusedOption) {
         focusedIndex = -1;
         this.announceAriaLiveContext({
-          event: 'menu'
+          event: 'menu',
+          context: {
+            tabSelectsValue: tabSelectsValue
+          }
         });
       }
 
@@ -75907,7 +75962,8 @@ var Select = /*#__PURE__*/function (_Component) {
       this.announceAriaLiveContext({
         event: 'menu',
         context: {
-          isDisabled: isOptionDisabled(options[nextFocus])
+          isDisabled: isOptionDisabled(options[nextFocus]),
+          tabSelectsValue: tabSelectsValue
         }
       });
     }
@@ -75937,22 +75993,16 @@ var Select = /*#__PURE__*/function (_Component) {
     key: "getCommonProps",
     value: function getCommonProps() {
       var clearValue = this.clearValue,
+          cx = this.cx,
           getStyles = this.getStyles,
+          getValue = this.getValue,
           setValue = this.setValue,
           selectOption = this.selectOption,
           props = this.props;
-      var classNamePrefix = props.classNamePrefix,
-          isMulti = props.isMulti,
+      var isMulti = props.isMulti,
           isRtl = props.isRtl,
           options = props.options;
-      var selectValue = this.state.selectValue;
       var hasValue = this.hasValue();
-
-      var getValue = function getValue() {
-        return selectValue;
-      };
-
-      var cx = _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["D"].bind(null, classNamePrefix);
       return {
         cx: cx,
         clearValue: clearValue,
@@ -76021,9 +76071,9 @@ var Select = /*#__PURE__*/function (_Component) {
   }, {
     key: "isClearable",
     value: function isClearable() {
-      var _this$props12 = this.props,
-          isClearable = _this$props12.isClearable,
-          isMulti = _this$props12.isMulti; // single select, by default, IS NOT clearable
+      var _this$props14 = this.props,
+          isClearable = _this$props14.isClearable,
+          isMulti = _this$props14.isMulti; // single select, by default, IS NOT clearable
       // multi select, by default, IS clearable
 
       if (isClearable === undefined) return isMulti;
@@ -76129,11 +76179,11 @@ var Select = /*#__PURE__*/function (_Component) {
           selectValue = _this$state7.selectValue,
           focusedValue = _this$state7.focusedValue,
           focusedOption = _this$state7.focusedOption;
-      var _this$props13 = this.props,
-          options = _this$props13.options,
-          menuIsOpen = _this$props13.menuIsOpen,
-          inputValue = _this$props13.inputValue,
-          screenReaderStatus = _this$props13.screenReaderStatus; // An aria live message representing the currently focused value in the select.
+      var _this$props15 = this.props,
+          options = _this$props15.options,
+          menuIsOpen = _this$props15.menuIsOpen,
+          inputValue = _this$props15.inputValue,
+          screenReaderStatus = _this$props15.screenReaderStatus; // An aria live message representing the currently focused value in the select.
 
       var focusedValueMsg = focusedValue ? valueFocusAriaMessage({
         focusedValue: focusedValue,
@@ -76158,13 +76208,13 @@ var Select = /*#__PURE__*/function (_Component) {
   }, {
     key: "renderInput",
     value: function renderInput() {
-      var _this$props14 = this.props,
-          isDisabled = _this$props14.isDisabled,
-          isSearchable = _this$props14.isSearchable,
-          inputId = _this$props14.inputId,
-          inputValue = _this$props14.inputValue,
-          tabIndex = _this$props14.tabIndex,
-          form = _this$props14.form;
+      var _this$props16 = this.props,
+          isDisabled = _this$props16.isDisabled,
+          isSearchable = _this$props16.isSearchable,
+          inputId = _this$props16.inputId,
+          inputValue = _this$props16.inputValue,
+          tabIndex = _this$props16.tabIndex,
+          form = _this$props16.form;
       var Input = this.components.Input;
       var inputIsHidden = this.state.inputIsHidden;
       var id = inputId || this.getElementId('input'); // aria attributes makes the JSX "noisy", separated for clarity
@@ -76181,7 +76231,7 @@ var Select = /*#__PURE__*/function (_Component) {
           id: id,
           innerRef: this.getInputRef,
           onBlur: this.onInputBlur,
-          onChange: _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["E"],
+          onChange: _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["E"],
           onFocus: this.onInputFocus,
           readOnly: true,
           disabled: isDisabled,
@@ -76230,12 +76280,12 @@ var Select = /*#__PURE__*/function (_Component) {
           SingleValue = _this$components.SingleValue,
           Placeholder = _this$components.Placeholder;
       var commonProps = this.commonProps;
-      var _this$props15 = this.props,
-          controlShouldRenderValue = _this$props15.controlShouldRenderValue,
-          isDisabled = _this$props15.isDisabled,
-          isMulti = _this$props15.isMulti,
-          inputValue = _this$props15.inputValue,
-          placeholder = _this$props15.placeholder;
+      var _this$props17 = this.props,
+          controlShouldRenderValue = _this$props17.controlShouldRenderValue,
+          isDisabled = _this$props17.isDisabled,
+          isMulti = _this$props17.isMulti,
+          inputValue = _this$props17.inputValue,
+          placeholder = _this$props17.placeholder;
       var _this$state8 = this.state,
           selectValue = _this$state8.selectValue,
           focusedValue = _this$state8.focusedValue,
@@ -76260,7 +76310,7 @@ var Select = /*#__PURE__*/function (_Component) {
             },
             isFocused: isOptionFocused,
             isDisabled: isDisabled,
-            key: _this4.getOptionValue(opt),
+            key: "".concat(_this4.getOptionValue(opt)).concat(index),
             index: index,
             removeProps: {
               onClick: function onClick() {
@@ -76295,9 +76345,9 @@ var Select = /*#__PURE__*/function (_Component) {
     value: function renderClearIndicator() {
       var ClearIndicator = this.components.ClearIndicator;
       var commonProps = this.commonProps;
-      var _this$props16 = this.props,
-          isDisabled = _this$props16.isDisabled,
-          isLoading = _this$props16.isLoading;
+      var _this$props18 = this.props,
+          isDisabled = _this$props18.isDisabled,
+          isLoading = _this$props18.isLoading;
       var isFocused = this.state.isFocused;
 
       if (!this.isClearable() || !ClearIndicator || isDisabled || !this.hasValue() || isLoading) {
@@ -76319,9 +76369,9 @@ var Select = /*#__PURE__*/function (_Component) {
     value: function renderLoadingIndicator() {
       var LoadingIndicator = this.components.LoadingIndicator;
       var commonProps = this.commonProps;
-      var _this$props17 = this.props,
-          isDisabled = _this$props17.isDisabled,
-          isLoading = _this$props17.isLoading;
+      var _this$props19 = this.props,
+          isDisabled = _this$props19.isDisabled,
+          isLoading = _this$props19.isLoading;
       var isFocused = this.state.isFocused;
       if (!LoadingIndicator || !isLoading) return null;
       var innerProps = {
@@ -76386,22 +76436,22 @@ var Select = /*#__PURE__*/function (_Component) {
       var _this$state9 = this.state,
           focusedOption = _this$state9.focusedOption,
           menuOptions = _this$state9.menuOptions;
-      var _this$props18 = this.props,
-          captureMenuScroll = _this$props18.captureMenuScroll,
-          inputValue = _this$props18.inputValue,
-          isLoading = _this$props18.isLoading,
-          loadingMessage = _this$props18.loadingMessage,
-          minMenuHeight = _this$props18.minMenuHeight,
-          maxMenuHeight = _this$props18.maxMenuHeight,
-          menuIsOpen = _this$props18.menuIsOpen,
-          menuPlacement = _this$props18.menuPlacement,
-          menuPosition = _this$props18.menuPosition,
-          menuPortalTarget = _this$props18.menuPortalTarget,
-          menuShouldBlockScroll = _this$props18.menuShouldBlockScroll,
-          menuShouldScrollIntoView = _this$props18.menuShouldScrollIntoView,
-          noOptionsMessage = _this$props18.noOptionsMessage,
-          onMenuScrollToTop = _this$props18.onMenuScrollToTop,
-          onMenuScrollToBottom = _this$props18.onMenuScrollToBottom;
+      var _this$props20 = this.props,
+          captureMenuScroll = _this$props20.captureMenuScroll,
+          inputValue = _this$props20.inputValue,
+          isLoading = _this$props20.isLoading,
+          loadingMessage = _this$props20.loadingMessage,
+          minMenuHeight = _this$props20.minMenuHeight,
+          maxMenuHeight = _this$props20.maxMenuHeight,
+          menuIsOpen = _this$props20.menuIsOpen,
+          menuPlacement = _this$props20.menuPlacement,
+          menuPosition = _this$props20.menuPosition,
+          menuPortalTarget = _this$props20.menuPortalTarget,
+          menuShouldBlockScroll = _this$props20.menuShouldBlockScroll,
+          menuShouldScrollIntoView = _this$props20.menuShouldScrollIntoView,
+          noOptionsMessage = _this$props20.noOptionsMessage,
+          onMenuScrollToTop = _this$props20.onMenuScrollToTop,
+          onMenuScrollToBottom = _this$props20.onMenuScrollToBottom;
       if (!menuIsOpen) return null; // TODO: Internal Option Type here
 
       var render = function render(props) {
@@ -76426,7 +76476,8 @@ var Select = /*#__PURE__*/function (_Component) {
             return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(Group, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, commonProps, group, {
               Heading: GroupHeading,
               headingProps: {
-                id: headingId
+                id: headingId,
+                data: item.data
               },
               label: _this5.formatGroupLabel(item.data)
             }), item.options.map(function (option) {
@@ -76458,7 +76509,7 @@ var Select = /*#__PURE__*/function (_Component) {
         menuPosition: menuPosition,
         menuShouldScrollIntoView: menuShouldScrollIntoView
       };
-      var menuElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["M"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, commonProps, menuPlacementProps), function (_ref10) {
+      var menuElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_15__["M"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, commonProps, menuPlacementProps), function (_ref10) {
         var ref = _ref10.ref,
             _ref10$placerProps = _ref10.placerProps,
             placement = _ref10$placerProps.placement,
@@ -76498,11 +76549,11 @@ var Select = /*#__PURE__*/function (_Component) {
     value: function renderFormField() {
       var _this6 = this;
 
-      var _this$props19 = this.props,
-          delimiter = _this$props19.delimiter,
-          isDisabled = _this$props19.isDisabled,
-          isMulti = _this$props19.isMulti,
-          name = _this$props19.name;
+      var _this$props21 = this.props,
+          delimiter = _this$props21.delimiter,
+          isDisabled = _this$props21.isDisabled,
+          isMulti = _this$props21.isMulti,
+          name = _this$props21.name;
       var selectValue = this.state.selectValue;
       if (!name || isDisabled) return;
 
@@ -76560,11 +76611,11 @@ var Select = /*#__PURE__*/function (_Component) {
           IndicatorsContainer = _this$components4.IndicatorsContainer,
           SelectContainer = _this$components4.SelectContainer,
           ValueContainer = _this$components4.ValueContainer;
-      var _this$props20 = this.props,
-          className = _this$props20.className,
-          id = _this$props20.id,
-          isDisabled = _this$props20.isDisabled,
-          menuIsOpen = _this$props20.menuIsOpen;
+      var _this$props22 = this.props,
+          className = _this$props22.className,
+          id = _this$props22.id,
+          isDisabled = _this$props22.isDisabled,
+          menuIsOpen = _this$props22.menuIsOpen;
       var isFocused = this.state.isFocused;
       var commonProps = this.commonProps = this.getCommonProps();
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(SelectContainer, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, commonProps, {
@@ -76602,19 +76653,19 @@ Select.defaultProps = defaultProps;
 
 /***/ }),
 
-/***/ "./node_modules/react-select/dist/index-4b37608a.browser.esm.js":
+/***/ "./node_modules/react-select/dist/index-75b02bac.browser.esm.js":
 /*!**********************************************************************!*\
-  !*** ./node_modules/react-select/dist/index-4b37608a.browser.esm.js ***!
+  !*** ./node_modules/react-select/dist/index-75b02bac.browser.esm.js ***!
   \**********************************************************************/
 /*! exports provided: A, B, C, D, E, F, G, M, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return exportedEqual; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return cleanValue; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return scrollIntoView; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return classNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return isDocumentElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return exportedEqual; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return cleanValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return scrollIntoView; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return noop; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return components; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return handleInputChange; });
@@ -76644,7 +76695,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return isTouchCapable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return isMobileDevice; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return defaultComponents; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return isDocumentElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return classNames; });
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
@@ -77186,15 +77237,16 @@ var MenuList = function MenuList(props) {
       cx = props.cx,
       getStyles = props.getStyles,
       isMulti = props.isMulti,
-      innerRef = props.innerRef;
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", {
+      innerRef = props.innerRef,
+      innerProps = props.innerProps;
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     css: getStyles('menuList', props),
     className: cx({
       'menu-list': true,
       'menu-list--is-multi': isMulti
     }, className),
     ref: innerRef
-  }, children);
+  }, innerProps), children);
 }; // ==============================
 // Menu Notices
 // ==============================
@@ -78183,15 +78235,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
 /* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./index-4b37608a.browser.esm.js */ "./node_modules/react-select/dist/index-4b37608a.browser.esm.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _index_4b37608a_browser_esm_js__WEBPACK_IMPORTED_MODULE_16__["F"]; });
+/* harmony import */ var _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./index-75b02bac.browser.esm.js */ "./node_modules/react-select/dist/index-75b02bac.browser.esm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _index_75b02bac_browser_esm_js__WEBPACK_IMPORTED_MODULE_16__["F"]; });
 
-/* harmony import */ var _Select_5d18b8d9_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Select-5d18b8d9.browser.esm.js */ "./node_modules/react-select/dist/Select-5d18b8d9.browser.esm.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createFilter", function() { return _Select_5d18b8d9_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["c"]; });
+/* harmony import */ var _Select_e1cf49ae_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Select-e1cf49ae.browser.esm.js */ "./node_modules/react-select/dist/Select-e1cf49ae.browser.esm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createFilter", function() { return _Select_e1cf49ae_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["c"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "defaultTheme", function() { return _Select_5d18b8d9_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["a"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "defaultTheme", function() { return _Select_e1cf49ae_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["a"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mergeStyles", function() { return _Select_5d18b8d9_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["m"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mergeStyles", function() { return _Select_e1cf49ae_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["m"]; });
 
 /* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @emotion/css */ "./node_modules/@emotion/css/dist/css.browser.esm.js");
 /* harmony import */ var _babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @babel/runtime/helpers/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js");
@@ -78264,7 +78316,7 @@ var NonceProvider = /*#__PURE__*/function (_Component) {
   return NonceProvider;
 }(react__WEBPACK_IMPORTED_MODULE_11__["Component"]);
 
-var index = Object(_stateManager_2f2b6f5b_browser_esm_js__WEBPACK_IMPORTED_MODULE_21__["m"])(_Select_5d18b8d9_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["S"]);
+var index = Object(_stateManager_2f2b6f5b_browser_esm_js__WEBPACK_IMPORTED_MODULE_21__["m"])(_Select_e1cf49ae_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["S"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
 
@@ -90562,7 +90614,11 @@ var Categories = /*#__PURE__*/function (_React$Component) {
         className: "text-4xl pt-4"
       }, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.renderList().length == 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "p-1 py-1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        className: "p-2"
+      }, "no hay resultados...")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "p-1 py-1 text-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, this.renderList())))));
     }
@@ -90880,7 +90936,11 @@ var Posts = /*#__PURE__*/function (_React$Component) {
         className: "text-4xl pt-4"
       }, "Noticias"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.renderList().length == 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "p-1 py-1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        className: "p-2"
+      }, "no hay resultados...")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "p-1 py-1 text-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, this.renderList())))));
     }
@@ -91033,7 +91093,11 @@ var Products = /*#__PURE__*/function (_React$Component) {
         className: "text-4xl pt-4"
       }, "Productos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.renderList().length == 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "p-1 py-1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        className: "p-2"
+      }, "no hay resultados...")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "p-1 py-1 text-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, this.renderList())))));
     }
@@ -91182,7 +91246,11 @@ var Tags = /*#__PURE__*/function (_React$Component) {
         className: "text-4xl pt-4"
       }, "Etiquetas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.renderList().length == 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "p-1 py-1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        className: "p-2"
+      }, "no hay resultados...")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "p-1 py-1 text-center"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, this.renderList())))));
     }
@@ -91334,9 +91402,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\laragon2.0\www\react-tailwind-app\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\laragon2.0\www\react-tailwind-app\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! D:\laragon2.0\www\react-tailwind-app\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /Volumes/INFO/Sites/laravel-react-tailwind-app/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Volumes/INFO/Sites/laravel-react-tailwind-app/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Volumes/INFO/Sites/laravel-react-tailwind-app/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

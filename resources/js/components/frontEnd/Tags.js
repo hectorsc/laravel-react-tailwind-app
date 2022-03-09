@@ -48,11 +48,18 @@ class Tags extends React.Component {
                <>
                   <h1 className="text-4xl pt-4">Etiquetas</h1>
                   <div className="bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                     <div className="p-1 py-1 text-center">
-                        <ul>
-                           { this.renderList() }
-                        </ul> 
-                     </div>        
+                     {
+                        this.renderList().length == 0 ?
+                           <div className="p-1 py-1">
+                              <p className="p-2">no hay resultados...</p>
+                           </div>
+                        :
+                        <div className="p-1 py-1 text-center">
+                           <ul>
+                              { this.renderList() }
+                           </ul> 
+                        </div>        
+                     }
                   </div>
                </>
             }

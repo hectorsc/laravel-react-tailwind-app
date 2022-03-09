@@ -40,7 +40,6 @@ class ProductRequest extends FormRequest
 
         if ($this->product) {
             if (isset($this->product->ref) && $this->product->ref == $request->ref) {
-                dd('y deberia entrar en este');
                 $rules = [
                     'name' => 'required|min:4|max:20',
                     'ref'  => 'required|min:4|max:20',
